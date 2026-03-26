@@ -1,6 +1,4 @@
-remplaza la vista de welcome por una adaptación de la siguiente vista, para que trabaje con la estructura y herramientas establecidas en laravel, que sea vista blade con tailwind, adicionalmente crea la vista de formulario, misma que tiene que seguir el patrón de diseño que la que te pido que adaptes para welcome, este formulario será para que los clientes ingresen una petición de atención para solicitar algún proyecto, agrega los campos que consideres necesarios para dicho formulario.
 
-la vista que tienes que adaptar es la siguiente;
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
