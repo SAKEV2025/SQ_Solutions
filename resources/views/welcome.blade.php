@@ -4,554 +4,710 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="SQ Smart Solutions - Especialistas en desarrollo de aplicaciones web, dashboards, análisis de KPIs y soluciones digitales empresariales">
-        <meta name="keywords" content="desarrollo web, dashboards, KPIs, Power BI, Looker Studio, SQL, AppSheet">
-        
-        <!-- Canonical URL -->
+        <meta name="description" content="SQ Smart Solutions convierte procesos dispersos en control operativo, automatizacion y tableros ejecutivos para tomar mejores decisiones.">
+        <meta name="keywords" content="consultoria digital, automatizacion de procesos, tableros ejecutivos, indicadores, operaciones, analitica empresarial">
         <link rel="canonical" href="{{ url('/') }}" />
-        
-        <!-- Force no cache for CSS on mobile -->
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
         <meta http-equiv="Pragma" content="no-cache">
         <meta http-equiv="Expires" content="0">
 
-        <title>SQ Smart Solutions - Soluciones Digitales Inteligentes</title>
+        <title>SQ Smart Solutions - Control, automatizacion y decision</title>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800&family=space-grotesk:400,500,600,700" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800&family=fraunces:500,600,700" rel="stylesheet" />
 
-        
-        <!-- Styles / Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        
+
         <style>
-            .gradient-text {
-                background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #1D4ED8 100%);
+            :root {
+                --page-bg: #f4efe7;
+                --page-fg: #0f172a;
+                --surface: rgba(255, 255, 255, 0.72);
+                --surface-strong: rgba(255, 255, 255, 0.88);
+                --surface-muted: rgba(255, 255, 255, 0.55);
+                --border-soft: rgba(15, 23, 42, 0.08);
+                --border-medium: rgba(15, 23, 42, 0.12);
+                --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.08);
+                --text-primary: #0f172a;
+                --text-secondary: #475569;
+                --text-muted: #94a3b8;
+                --accent-primary: #1456b8;
+                --accent-secondary: #c08457;
+                color-scheme: light;
+            }
+
+            html[data-theme="dark"] {
+                --page-bg: #0d0221;
+                --page-fg: #f0e5ff;
+                --surface: rgba(26, 0, 51, 0.72);
+                --surface-strong: rgba(26, 0, 51, 0.9);
+                --surface-muted: rgba(26, 0, 51, 0.45);
+                --border-soft: rgba(0, 245, 255, 0.16);
+                --border-medium: rgba(255, 0, 110, 0.24);
+                --shadow-soft: 0 24px 80px rgba(13, 2, 33, 0.35);
+                --text-primary: #f0e5ff;
+                --text-secondary: #e5deff;
+                --text-muted: #c9b5ff;
+                --accent-primary: #ff006e;
+                --accent-secondary: #00f5ff;
+                color-scheme: dark;
+            }
+
+            * {
+                transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+            }
+
+            body {
+                font-family: 'Manrope', sans-serif;
+                background: var(--page-bg);
+                color: var(--page-fg);
+                transition: background-color 300ms ease, color 300ms ease;
+            }
+
+            .font-display {
+                font-family: 'Fraunces', serif;
+            }
+
+            .text-accent-gradient {
+                background: linear-gradient(135deg, #1456b8 0%, #2563eb 50%, #3b82f6 100%);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
-            
-            .hero-gradient {
-                background: linear-gradient(135deg, 
-                    rgba(15, 23, 42, 0.95) 0%, 
-                    rgba(30, 41, 59, 0.92) 25%,
-                    rgba(51, 65, 85, 0.90) 50%,
-                    rgba(30, 41, 59, 0.92) 75%,
-                    rgba(15, 23, 42, 0.95) 100%);
+
+            .glass-panel {
+                background: var(--surface);
+                backdrop-filter: blur(22px);
+                border: 1px solid var(--border-soft);
+                box-shadow: var(--shadow-soft);
+                transition: background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
             }
-            
-            .card-hover {
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            .card-rise {
+                transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background-color 300ms ease;
             }
-            
-            .card-hover:hover {
-                transform: translateY(-8px) scale(1.02);
+
+            .card-rise:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
             }
-            
-            .floating-animation {
-                animation: float 6s ease-in-out infinite;
+
+            html[data-theme="dark"] .card-rise:hover {
+                box-shadow: 0 24px 50px rgba(255, 0, 110, 0.3);
             }
-            
-            @keyframes float {
-                0%, 100% { transform: translateY(0px) rotate(-5deg); }
-                50% { transform: translateY(-20px) rotate(-5deg); }
+
+            .reveal {
+                opacity: 0;
+                transform: translateY(18px);
+                transition: opacity 600ms ease, transform 600ms ease;
             }
-            
-            .pulse-glow {
-                animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+            .reveal.is-visible {
+                opacity: 1;
+                transform: translateY(0);
             }
-            
-            @keyframes pulse-glow {
-                0%, 100% {
-                    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-                }
-                50% {
-                    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
-                }
+
+            .mesh {
+                background-image: radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.08) 1px, transparent 0);
+                background-size: 28px 28px;
+                transition: background-image 300ms ease;
+            }
+
+            html[data-theme="dark"] .mesh {
+                background-image: radial-gradient(circle at 1px 1px, rgba(0, 245, 255, 0.12) 1px, transparent 0);
+            }
+
+            html[data-theme="dark"] .text-slate-950,
+            html[data-theme="dark"] .text-slate-900 {
+                color: #f8fafc !important;
+                transition: color 300ms ease;
+            }
+
+            html[data-theme="dark"] .text-slate-800,
+            html[data-theme="dark"] .text-slate-700 {
+                color: #e2e8f0 !important;
+                transition: color 300ms ease;
+            }
+
+            html[data-theme="dark"] .text-slate-600,
+            html[data-theme="dark"] .text-slate-500 {
+                color: #94a3b8 !important;
+                transition: color 300ms ease;
+            }
+
+            html[data-theme="dark"] .text-slate-300 {
+                color: #cbd5e1 !important;
+                transition: color 300ms ease;
+            }
+
+            html[data-theme="dark"] nav,
+            html[data-theme="dark"] footer,
+            html[data-theme="dark"] #contacto {
+                background: rgba(26, 0, 51, 0.7) !important;
+                border-color: rgba(0, 245, 255, 0.14) !important;
+                transition: background-color 300ms ease, border-color 300ms ease;
+            }
+
+            html[data-theme="dark"] section,
+            html[data-theme="dark"] article,
+            html[data-theme="dark"] .glass-panel,
+            html[data-theme="dark"] .card-rise,
+            html[data-theme="dark"] [class*="bg-white"] {
+                background-color: var(--surface-strong) !important;
+                border-color: var(--border-soft) !important;
+                color: var(--page-fg);
+                transition: background-color 300ms ease, border-color 300ms ease, color 300ms ease;
+            }
+
+            html[data-theme="dark"] [class*="bg-white/5"] {
+                background-color: rgba(26, 0, 51, 0.35) !important;
+                transition: background-color 300ms ease;
+            }
+
+            html[data-theme="dark"] [class*="bg-white/70"],
+            html[data-theme="dark"] [class*="bg-white/75"],
+            html[data-theme="dark"] [class*="bg-white/80"],
+            html[data-theme="dark"] [class*="bg-white/85"] {
+                background-color: rgba(26, 0, 51, 0.78) !important;
+                transition: background-color 300ms ease;
+            }
+
+            html[data-theme="dark"] [class*="bg-slate-950"] {
+                background-color: #0d0221 !important;
+                transition: background-color 300ms ease;
+            }
+
+            html[data-theme="dark"] [class*="bg-slate-900"] {
+                background-color: #1a0033 !important;
+                transition: background-color 300ms ease;
+            }
+
+            html[data-theme="dark"] [class*="bg-slate-50"],
+            html[data-theme="dark"] [class*="bg-blue-50"],
+            html[data-theme="dark"] [class*="bg-amber-50"],
+            html[data-theme="dark"] [class*="bg-sky-50"] {
+                background-color: rgba(26, 0, 51, 0.5) !important;
+                transition: background-color 300ms ease;
+            }
+
+            /* Animación suave para botones y enlaces */
+            button, a {
+                transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, transform 240ms ease;
+            }
+
+            /* Iconos del tema */
+            #theme-icon-sun,
+            #theme-icon-moon {
+                transition: opacity 300ms ease, transform 300ms ease;
             }
         </style>
     </head>
-    <body class="font-inter antialiased bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 min-h-screen overflow-x-hidden">
-        <!-- Background Pattern -->
-        <div class="fixed inset-0 z-0">
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url('technology-785742_1920.jpg')"></div>
-            <div class="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-slate-900/90"></div>
-            <!-- Animated background elements -->
-            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-            <div class="absolute top-40 right-10 w-96 h-96 bg-indigo-500/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-700"></div>
-            <div class="absolute -bottom-32 left-20 w-80 h-80 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
+    <body class="bg-black text-slate-900 antialiased overflow-x-hidden">
+        <div class="fixed inset-0 -z-10">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#f8f3ea] via-white to-[#e8efe9]"></div>
+            <div class="absolute inset-0 mesh opacity-70"></div>
+            <div class="absolute -top-32 right-[-8rem] h-96 w-96 rounded-full bg-blue-200/50 blur-3xl"></div>
+            <div class="absolute top-[32rem] left-[-8rem] h-96 w-96 rounded-full bg-blue-200/50 blur-3xl"></div>
+            <div class="absolute bottom-[-8rem] right-1/4 h-80 w-80 rounded-full bg-blue-200/40 blur-3xl"></div>
         </div>
 
         <div class="relative z-10">
-            <!-- Navigation -->
-            <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-700/50">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex items-center justify-between h-16">
-                        <!-- Logo -->
-                        <a href="{{ url('/') }}" class="flex items-center space-x-3 group">
-                            <div class="relative">
-                                <img 
-                                    src="{{ asset('logo.png') }}" 
-                                    alt="SQ Smart Solutions Logo" 
-                                    width="40" 
-                                    height="40" 
-                                    class="h-10 w-10 object-contain drop-shadow-md" 
-                                    loading="lazy" 
-                                    decoding="async"
-                                />
-                                <div class="absolute -inset-2 bg-blue-400/20 rounded-full blur group-hover:bg-blue-300/30 transition-colors duration-300"></div>
+            <nav class="sticky top-0 z-50 border-b border-slate-900/5 bg-white/70 backdrop-blur-xl">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div class="flex h-20 items-center justify-between">
+                        <a href="{{ url('/') }}" class="flex items-center gap-3">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 shadow-lg shadow-slate-900/15">
+                                <img src="{{ asset('landing/sq.png') }}" alt="SQ Smart Solutions Logo" width="40" height="40" class="h-10 w-10 object-contain" loading="eager" decoding="async" />
                             </div>
                             <div>
-                                <h1 class="font-space-grotesk text-xl font-bold text-white group-hover:text-blue-100 transition-colors duration-300">SQ SMART</h1>
-                                <p class="text-xs text-blue-300 font-medium">SOLUTIONS</p>
+                                <p class="text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-500">SQ Smart Solutions</p>
+                                <p class="font-display text-lg font-semibold text-slate-900">Control que se entiende, resultados que se sienten</p>
                             </div>
                         </a>
 
-                        <!-- Desktop Navigation -->
-                        <div class="hidden md:block">
-                            <div class="ml-10 flex items-baseline space-x-8">
-                                <a href="{{ url('/') }}" class="text-slate-300 hover:text-white hover:bg-blue-600/20 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300">Inicio</a>
-                                <a href="{{ url('/#servicios') }}" class="text-slate-300 hover:text-white hover:bg-blue-600/20 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300">Servicios</a>
-                                <a href="{{ url('/#portafolio') }}" class="text-slate-300 hover:text-white hover:bg-blue-600/20 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300">Portafolio</a>
-                                <a href="{{ url('/contacto') }}" class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">Contacto</a>
-                            </div>
+                        <div class="hidden items-center gap-2 md:flex">
+                            <a href="#propuesta" class="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900">Propuesta</a>
+                            <a href="#impacto" class="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900">Impacto</a>
+                            <a href="#metodo" class="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900">Metodo</a>
+                            <button id="theme-toggle" type="button" class="ml-2 inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50" aria-label="Cambiar tema">
+                                <svg id="theme-icon-sun" class="h-4 w-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m0 12.728 1.414-1.414M18.364 5.636 16.95 7.05M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+                                <svg id="theme-icon-moon" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" /></svg>
+                                <span id="theme-toggle-label">Oscuro</span>
+                            </button>
+                            <a href="#contacto" class="ml-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-800">Agenda una llamada</a>
                         </div>
 
-                        <!-- Mobile menu button -->
-                        <div class="md:hidden">
-                            <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700 transition-colors duration-300">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                                </svg>
-                            </button>
-                        </div>
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center rounded-full border border-slate-900/10 bg-white p-3 text-slate-700 shadow-sm md:hidden" type="button" aria-controls="mobile-menu" aria-expanded="false">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Mobile menu -->
-                <div id="mobile-menu" class="md:hidden hidden bg-slate-800/95 backdrop-blur-md border-t border-slate-700/50">
-                    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a href="{{ url('/') }}" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-blue-600/20 transition-all duration-300">Inicio</a>
-                        <a href="{{ url('/#servicios') }}" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-blue-600/20 transition-all duration-300">Servicios</a>
-                        <a href="{{ url('/#portafolio') }}" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-blue-600/20 transition-all duration-300">Portafolio</a>
-                        <a href="{{ url('/contacto') }}" class="block px-3 py-2 rounded-lg text-base font-medium bg-gradient-to-r from-blue-600 to-blue-500 text-white transition-all duration-300 mx-3 text-center">Contacto</a>
+                <div id="mobile-menu" class="hidden border-t border-slate-900/5 bg-white/95 md:hidden">
+                    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+                        <div class="grid gap-2">
+                            <a href="#propuesta" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-900/5">Propuesta</a>
+                            <a href="#impacto" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-900/5">Impacto</a>
+                            <a href="#metodo" class="rounded-2xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-900/5">Metodo</a>
+                            <button id="mobile-theme-toggle" type="button" class="rounded-2xl border border-slate-900/10 bg-white px-4 py-3 text-left text-sm font-semibold text-slate-700">Cambiar tema</button>
+                            <a href="#contacto" class="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white">Agenda una llamada</a>
+                        </div>
                     </div>
                 </div>
             </nav>
 
-            <!-- Hero Section -->
             <main id="inicio">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-                    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <!-- Content -->
-                        <div class="space-y-8 lg:pr-8">
-                            <div class="space-y-6">
-                                <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20">
-                                    <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse mr-2"></div>
-                                    <span class="text-blue-300 text-sm font-medium">Transformación Digital Empresarial</span>
-                                </div>
-                                
-                                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-space-grotesk font-bold leading-tight">
-                                    <span class="text-white">Soluciones </span>
-                                    <span class="gradient-text">Inteligentes</span>
-                                    <br>
-                                    <span class="text-white">para tu </span>
-                                    <span class="gradient-text">Empresa</span>
+                <section class="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16">
+                    <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+                        <div class="reveal space-y-8">
+
+                            <div class="space-y-5">
+                                <h1 class="font-display max-w-3xl text-5xl font-semibold leading-[0.95] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+                                    Convierte la operacion en una <span class="text-accent-gradient">ventaja competitiva</span>.
                                 </h1>
-                                
-                                <p class="text-xl text-slate-300 leading-relaxed max-w-2xl">
-                                    Potenciamos tu negocio con <span class="text-blue-400 font-semibold">dashboards interactivos</span>, 
-                                    <span class="text-blue-400 font-semibold">análisis de KPIs</span> y 
-                                    <span class="text-blue-400 font-semibold">aplicaciones web</span> personalizadas 
-                                    que impulsan la toma de decisiones estratégicas.
+                                <p class="max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+                                    Dise&ntilde;amos experiencias digitales que dan visibilidad, eliminan tareas repetitivas y convierten datos dispersos en decisiones claras para direcci&oacute;n, operaciones y ventas.
                                 </p>
                             </div>
 
-                            <!-- CTA Buttons -->
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="#servicios" class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                                    <span class="relative z-10">Conocer Servicios</span>
-                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="flex flex-col gap-4 sm:flex-row">
+                                <a href="#contacto" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-7 py-4 text-sm font-semibold text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-800">
+                                    Quiero una propuesta
                                 </a>
-                                <a href="{{ url('/contacto') }}" class="px-8 py-4 border-2 border-blue-400/50 text-blue-100 font-semibold rounded-xl hover:bg-blue-400/10 hover:border-blue-400 transform hover:-translate-y-1 transition-all duration-300">
-                                    Consulta Gratuita
+                                <a href="#propuesta" class="inline-flex items-center justify-center rounded-full border border-slate-900/10 bg-white px-7 py-4 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-900/20 hover:bg-slate-50">
+                                    Ver el enfoque
                                 </a>
                             </div>
 
-                            <!-- Tech Stack -->
-                            <div class="space-y-4">
-                                <p class="text-sm text-slate-400 font-medium">Tecnologías que dominamos:</p>
-                                <div class="flex flex-wrap gap-3">
-                                    <span class="px-3 py-1 bg-blue-500/10 text-blue-300 text-sm font-medium rounded-full border border-blue-500/20">Power BI</span>
-                                    <span class="px-3 py-1 bg-blue-500/10 text-blue-300 text-sm font-medium rounded-full border border-blue-500/20">Looker Studio</span>
-                                    <span class="px-3 py-1 bg-blue-500/10 text-blue-300 text-sm font-medium rounded-full border border-blue-500/20">SQL</span>
-                                    <span class="px-3 py-1 bg-blue-500/10 text-blue-300 text-sm font-medium rounded-full border border-blue-500/20">AppSheet</span>
-                                    <span class="px-3 py-1 bg-blue-500/10 text-blue-300 text-sm font-medium rounded-full border border-blue-500/20">Laravel</span>
-                                    <span class="px-3 py-1 bg-blue-500/10 text-blue-300 text-sm font-medium rounded-full border border-blue-500/20">React</span>
+                            <div class="grid gap-4 sm:grid-cols-3">
+                                <div class="glass-panel rounded-3xl p-5">
+                                    <p class="text-sm font-medium text-slate-500">Visibilidad</p>
+                                    <p class="mt-2 text-3xl font-semibold text-slate-950">360&deg;</p>
+                                    <p class="mt-1 text-sm text-slate-600">Indicadores para dirigir con contexto.</p>
+                                </div>
+                                <div class="glass-panel rounded-3xl p-5">
+                                    <p class="text-sm font-medium text-slate-500">Automatizacion</p>
+                                    <p class="mt-2 text-3xl font-semibold text-slate-950">-33%</p>
+                                    <p class="mt-1 text-sm text-slate-600">Menos carga operativa manual.</p>
+                                </div>
+                                <div class="glass-panel rounded-3xl p-5">
+                                    <p class="text-sm font-medium text-slate-500">Decision</p>
+                                    <p class="mt-2 text-3xl font-semibold text-slate-950">En tiempo real</p>
+                                    <p class="mt-1 text-sm text-slate-600">Control de negocio sin esperar reportes tardios.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Dashboard Image -->
+                        <style>
+                            @keyframes bounce-scale {
+                                0% {
+                                    opacity: 0;
+                                    transform: translateY(-80px) scale(0.7) rotateY(25deg);
+                                }
+                                40% {
+                                    opacity: 1;
+                                    transform: translateY(0) scale(1.08) rotateY(0deg);
+                                }
+                                65% {
+                                    transform: translateY(-15px) scale(1.02) rotateY(-5deg);
+                                }
+                                85% {
+                                    transform: translateY(0) scale(1.01) rotateY(0deg);
+                                }
+                                100% {
+                                    opacity: 1;
+                                    transform: translateY(0) scale(1) rotateY(0deg);
+                                }
+                            }
+
+
+
+                            .carousel-slide.bounce img {
+                                animation: bounce-scale 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+                            }
+                        </style>
+
                         <div class="relative lg:pl-8">
                             <div class="relative">
                                 <!-- Glow effect -->
-                                <div class="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-2xl"></div>
+                                <div class="absolute"></div>
                                 
-                                <!-- Main image -->
+                                <!-- Main carousel -->
                                 <div class="relative">
-                                    <img 
-                                        src="dashboard2.png" 
-                                        alt="Dashboard Analytics Preview" 
-                                        class="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl border border-slate-700/50 floating-animation"
-                                    >
-                                    <!-- Overlay gradient -->
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent rounded-2xl"></div>
-                                </div>
+                                    <div id="carousel-main" class="relative w-full max-w-2xl mx-auto h-96">
+                                        <!-- Carrusel de imágenes -->
+                                        <div class="carousel-container relative w-full h-full">
+                                            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out" style="opacity: 1;">
+                                                <img src="{{ asset('Carrusel_index/WhatsApp Image 2026-03-30 at 4.00.14 PM.jpeg') }}" class="w-full h-full object-contain bounce" alt="Carrusel Imagen 1" loading="lazy" />
+                                            </div>
+                                            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out" style="opacity: 0;">
+                                                <img src="{{ asset('Carrusel_index/WhatsApp Image 2026-03-30 at 4.00.14 PM (1).jpeg') }}" class="w-full h-full object-contain" alt="Carrusel Imagen 2" loading="lazy" />
+                                            </div>
+                                            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out" style="opacity: 0;">
+                                                <img src="{{ asset('Carrusel_index/WhatsApp Image 2026-03-30 at 4.00.14 PM (2).jpeg') }}" class="w-full h-full object-contain" alt="Carrusel Imagen 3" loading="lazy" />
+                                            </div>
+                                        </div>
+                                        <!-- Overlay gradient -->
+                                        <div class="absolute inset-0 rounded-2xl"></div>
 
-                                <!-- Floating elements -->
-                                <div class="absolute -top-6 -right-6 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
-                                <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+                                        <!-- Indicadores de posición -->
+                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+                                            <button class="carousel-indicator h-2 w-2 rounded-full bg-white/60 transition" style="width: 24px; background-color: rgba(255, 255, 255, 0.9);" data-index="0"></button>
+                                            <button class="carousel-indicator h-2 w-2 rounded-full bg-white/60 transition" data-index="1"></button>
+                                            <button class="carousel-indicator h-2 w-2 rounded-full bg-white/60 transition" data-index="2"></button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Floating elements -->
+                                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+                                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse" style="animation-delay: 1s;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            // Carrusel de imágenes con animación de rebote
+                            let currentSlide = 0;
+                            const slides = document.querySelectorAll('.carousel-slide');
+                            const indicators = document.querySelectorAll('.carousel-indicator');
+                            const carouselContainer = document.querySelector('.carousel-container');
+                            const totalSlides = slides.length;
+
+                            function showSlide(index) {
+                                slides.forEach((slide, i) => {
+                                    const isActive = i === index;
+                                    slide.style.opacity = isActive ? '1' : '0';
+                                    
+                                    // Agregar clase bounce cuando es visible
+                                    const img = slide.querySelector('img');
+                                    if (img) {
+                                        if (isActive) {
+                                            img.classList.remove('bounce');
+                                            void img.offsetWidth; // Trigger reflow
+                                            img.classList.add('bounce');
+                                        } else {
+                                            img.classList.remove('bounce');
+                                        }
+                                    }
+                                });
+                                
+                                indicators.forEach((btn, i) => {
+                                    if (i === index) {
+                                        btn.style.width = '24px';
+                                        btn.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                                    } else {
+                                        btn.style.width = '8px';
+                                        btn.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+                                    }
+                                });
+                            }
+
+                            function nextSlide() {
+                                currentSlide = (currentSlide + 1) % totalSlides;
+                                showSlide(currentSlide);
+                            }
+
+                            // Click en la imagen para cambiar
+                            carouselContainer.addEventListener('click', nextSlide);
+
+                            // Indicadores
+                            indicators.forEach(btn => {
+                                btn.addEventListener('click', (e) => {
+                                    e.stopPropagation();
+                                    currentSlide = parseInt(e.target.dataset.index);
+                                    showSlide(currentSlide);
+                                });
+                            });
+
+                            // Auto-rotate cada 5 segundos
+                            setInterval(nextSlide, 5000);
+                        </script>
+                    </div>
+                </section>
+
+                <section id="propuesta" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+                    <div class="reveal mb-12 max-w-3xl">
+                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-700">Propuesta de valor</p>
+                        <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Una capa de claridad sobre la operacion real del negocio.</h2>
+                        <p class="mt-4 text-lg leading-8 text-slate-600">La pagina deja de hablar de herramientas y empieza a mostrar resultados. El mensaje central es simple: menos friccion, mas control, mejor decision.</p>
+                    </div>
+
+                    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                        <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                            </div>
+                            <h3 class="mt-5 text-xl font-semibold text-slate-950">Direccion visible</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">Tableros y reportes que muestran el estado del negocio en una sola lectura.</p>
+                        </article>
+
+                        <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-600 text-white">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v8m4-4H8" /></svg>
+                            </div>
+                            <h3 class="mt-5 text-xl font-semibold text-slate-950">Automatizacion util</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">Flujos que eliminan captura repetitiva, errores y tiempos muertos.</p>
+                        </article>
+
+                        <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500 text-white">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2.21 0-4 1.34-4 3s1.79 3 4 3 4 1.34 4 3-1.79 3-4 3m0-14v14" /></svg>
+                            </div>
+                            <h3 class="mt-5 text-xl font-semibold text-slate-950">Valor financiero</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">La narrativa visual se enfoca en ahorro, productividad y conversion, no en buzzwords.</p>
+                        </article>
+
+                        <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-600 text-white">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" /></svg>
+                            </div>
+                            <h3 class="mt-5 text-xl font-semibold text-slate-950">Escala ordenada</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">Soluciones disenadas para crecer con la operacion y no romper procesos existentes.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="impacto" class="bg-slate-950 py-16 text-white lg:py-24">
+                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                            <div class="reveal space-y-5">
+                                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">Impacto esperado</p>
+                                <h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">No vendemos tecnologia aislada. Dise&ntilde;amos una operacion mas rentable.</h2>
+                                <p class="max-w-xl text-lg leading-8 text-slate-300">El foco del redise&ntilde;o es que el usuario entienda en segundos por que SQ Smart Solutions importa: orden, velocidad, trazabilidad y decisiones con sustento.</p>
+                            </div>
+
+                            <div class="grid gap-5 sm:grid-cols-2">
+                                <div class="reveal rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+                                    <p class="text-sm text-slate-300">Procesos con friccion</p>
+                                    <p class="mt-3 text-4xl font-semibold">1 sola vista</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-300">Información operativa, comercial y directiva consolidada.</p>
+                                </div>
+                                <div class="reveal rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+                                    <p class="text-sm text-slate-300">Reportes lentos</p>
+                                    <p class="mt-3 text-4xl font-semibold">Tiempo real</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-300">Indicadores listos para actuar, no solo para documentar.</p>
+                                </div>
+                                <div class="reveal rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+                                    <p class="text-sm text-slate-300">Tareas repetitivas</p>
+                                    <p class="mt-3 text-4xl font-semibold">Menos carga</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-300">Automatizaciones que liberan tiempo del equipo.</p>
+                                </div>
+                                <div class="reveal rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+                                    <p class="text-sm text-slate-300">Decision intuitiva</p>
+                                    <p class="mt-3 text-4xl font-semibold">Mas claridad</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-300">Cada accion acompa&ntilde;ada de contexto y prioridad.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
+
+                <section id="metodo" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+                    <div class="reveal mb-12 max-w-3xl">
+                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-700">Metodo</p>
+                        <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Un proceso sencillo, consultivo y orientado a adopcion real.</h2>
+                    </div>
+
+                    <div class="grid gap-5 lg:grid-cols-4">
+                        <div class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
+                            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">01</p>
+                            <h3 class="mt-4 text-xl font-semibold text-slate-950">Diagnostico</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">Identificamos procesos, cuellos de botella y decisiones que hoy dependen de demasiada friccion.</p>
+                        </div>
+                        <div class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
+                            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">02</p>
+                            <h3 class="mt-4 text-xl font-semibold text-slate-950">Arquitectura</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">Definimos una experiencia de uso clara para negocio, sin complejidad innecesaria.</p>
+                        </div>
+                        <div class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
+                            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">03</p>
+                            <h3 class="mt-4 text-xl font-semibold text-slate-950">Implementacion</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">Construimos tableros, flujos y herramientas listas para operar.</p>
+                        </div>
+                        <div class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
+                            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">04</p>
+                            <h3 class="mt-4 text-xl font-semibold text-slate-950">Adopcion</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">Acompa&ntilde;amos el uso para que el cambio se sostenga en el tiempo.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+                    <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+                        <div class="reveal rounded-[2rem] bg-slate-900 p-8 text-white lg:p-10">
+                            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">Sectores que encajan</p>
+                            <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Donde hay operacion, hay oportunidad de ordenar y crecer.</h2>
+                            <p class="mt-4 max-w-xl text-lg leading-8 text-slate-300">La propuesta se adapta naturalmente a empresas con venta, seguimiento, aprobaciones, registros o indicadores que hoy viven dispersos en hojas, correos y sistemas inconexos.</p>
+                            <div class="mt-8 flex flex-wrap gap-3">
+                                <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white">Servicios</span>
+                                <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white">Distribucion</span>
+                                <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white">Retail</span>
+                                <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white">Manufactura</span>
+                                <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white">Construccion</span>
+                                <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white">Comercial</span>
+                            </div>
+                        </div>
+
+                        <div class="reveal grid gap-5 sm:grid-cols-2">
+                            <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-indigo-700">Prioridad</p>
+                                <h3 class="mt-4 text-xl font-semibold text-slate-950">Reducir caos operativo</h3>
+                                <p class="mt-3 text-sm leading-7 text-slate-600">Eliminar retrabajo, duplicidad y seguimiento manual.</p>
+                            </div>
+                            <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-amber-700">Prioridad</p>
+                                <h3 class="mt-4 text-xl font-semibold text-slate-950">Ver antes de reaccionar</h3>
+                                <p class="mt-3 text-sm leading-7 text-slate-600">Anticipar desvio, atrasos y oportunidades.</p>
+                            </div>
+                            <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">Prioridad</p>
+                                <h3 class="mt-4 text-xl font-semibold text-slate-950">Unificar informacion</h3>
+                                <p class="mt-3 text-sm leading-7 text-slate-600">Una sola fuente para operacion, direccion y comercial.</p>
+                            </div>
+                            <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Prioridad</p>
+                                <h3 class="mt-4 text-xl font-semibold text-slate-950">Escalar sin desorden</h3>
+                                <p class="mt-3 text-sm leading-7 text-slate-600">Crecimiento con estructura, no con parches.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contacto" class="border-t border-slate-900/5 bg-white/70 py-16 lg:py-24">
+                    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                        <div class="reveal rounded-[2rem] bg-slate-950 p-8 text-white shadow-2xl shadow-slate-950/20 lg:p-12">
+                            <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                                <div>
+                                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">Contacto</p>
+                                    <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Si el negocio necesita claridad, la pagina debe demostrarla desde el primer vistazo.</h2>
+                                    <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-300">Esta propuesta ya no se presenta como un catalogo tecnico. Se presenta como una solucion de negocio con foco en control, velocidad y crecimiento ordenado.</p>
+                                </div>
+
+                                <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
+                                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-300">Canales de contacto</p>
+                                    <div class="mt-5 grid gap-3">
+                                        <a href="mailto:contacto@sqsmartsolutions.com" class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">contacto@sqsmartsolutions.com</a>
+                                        <a href="https://wa.me/5215536799199" target="_blank" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10">WhatsApp comercial</a>
+                                        <a href="{{ url('/contacto') }}" class="rounded-2xl bg-indigo-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">Abrir formulario</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
-            <!-- Services Section -->
-            <section id="servicios" class="py-20 bg-gradient-to-b from-transparent to-slate-800/50">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center space-y-6 mb-16">
-                        <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/20">
-                            <span class="text-blue-300 text-sm font-medium">Nuestros Servicios</span>
-                        </div>
-                        
-                        <h2 class="text-4xl lg:text-5xl font-space-grotesk font-bold text-white">
-                            Soluciones que <span class="gradient-text">Transforman</span>
-                        </h2>
-                        
-                        <p class="text-xl text-slate-300 max-w-3xl mx-auto">
-                            Desde análisis de datos hasta desarrollo de aplicaciones completas, 
-                            ofrecemos soluciones integrales para potenciar tu negocio.
-                        </p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Dashboard & Analytics -->
-                        <div class="group relative card-hover">
-                            <div class="relative p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-700/50 shadow-xl">
-                                <!-- Icon -->
-                                <div class="relative mb-6">
-                                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="absolute -inset-2 bg-blue-500/20 rounded-2xl blur group-hover:bg-blue-400/30 transition-colors duration-300"></div>
-                                </div>
-                                
-                                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-blue-100 transition-colors duration-300">
-                                    Dashboards & Analytics
-                                </h3>
-                                
-                                <p class="text-slate-300 mb-6 leading-relaxed">
-                                    Transformamos tus datos en insights actionables con dashboards interactivos en Power BI y Looker Studio que facilitan la toma de decisiones estratégicas.
-                                </p>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs font-medium rounded-md">Power BI</span>
-                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs font-medium rounded-md">Looker Studio</span>
-                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs font-medium rounded-md">KPIs</span>
-                                </div>
-                                
-                                <!-- Hover border effect -->
-                                <div class="absolute inset-0 rounded-2xl border-2 border-blue-400/0 group-hover:border-blue-400/50 transition-colors duration-300"></div>
-                            </div>
-                        </div>
-
-                        <!-- Web Development -->
-                        <div class="group relative card-hover">
-                            <div class="relative p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-700/50 shadow-xl">
-                                <div class="relative mb-6">
-                                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                                        </svg>
-                                    </div>
-                                    <div class="absolute -inset-2 bg-indigo-500/20 rounded-2xl blur group-hover:bg-indigo-400/30 transition-colors duration-300"></div>
-                                </div>
-                                
-                                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-indigo-100 transition-colors duration-300">
-                                    Desarrollo Web
-                                </h3>
-                                
-                                <p class="text-slate-300 mb-6 leading-relaxed">
-                                    Creamos aplicaciones web modernas, landing pages y sistemas empresariales utilizando las últimas tecnologías y mejores prácticas de desarrollo.
-                                </p>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-medium rounded-md">Laravel</span>
-                                    <span class="px-2 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-medium rounded-md">React</span>
-                                    <span class="px-2 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-medium rounded-md">Tailwind CSS</span>
-                                </div>
-                                
-                                <div class="absolute inset-0 rounded-2xl border-2 border-indigo-400/0 group-hover:border-indigo-400/50 transition-colors duration-300"></div>
-                            </div>
-                        </div>
-
-                        <!-- Database & Optimization -->
-                        <div class="group relative card-hover">
-                            <div class="relative p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-700/50 shadow-xl">
-                                <div class="relative mb-6">
-                                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
-                                        </svg>
-                                    </div>
-                                    <div class="absolute -inset-2 bg-emerald-500/20 rounded-2xl blur group-hover:bg-emerald-400/30 transition-colors duration-300"></div>
-                                </div>
-                                
-                                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-emerald-100 transition-colors duration-300">
-                                    Base de Datos & SQL
-                                </h3>
-                                
-                                <p class="text-slate-300 mb-6 leading-relaxed">
-                                    Optimizamos y estructuramos tus bases de datos para máximo rendimiento, creando consultas SQL eficientes y arquitecturas escalables.
-                                </p>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs font-medium rounded-md">SQL Server</span>
-                                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs font-medium rounded-md">MySQL</span>
-                                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs font-medium rounded-md">PostgreSQL</span>
-                                </div>
-                                
-                                <div class="absolute inset-0 rounded-2xl border-2 border-emerald-400/0 group-hover:border-emerald-400/50 transition-colors duration-300"></div>
-                            </div>
-                        </div>
-
-                        <!-- AppSheet Solutions -->
-                        <div class="group relative card-hover">
-                            <div class="relative p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-700/50 shadow-xl">
-                                <div class="relative mb-6">
-                                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="absolute -inset-2 bg-orange-500/20 rounded-2xl blur group-hover:bg-orange-400/30 transition-colors duration-300"></div>
-                                </div>
-                                
-                                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-orange-100 transition-colors duration-300">
-                                    Apps Móviles AppSheet
-                                </h3>
-                                
-                                <p class="text-slate-300 mb-6 leading-relaxed">
-                                    Desarrollamos aplicaciones móviles empresariales sin código usando AppSheet, perfectas para automatizar procesos y mejorar la productividad.
-                                </p>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs font-medium rounded-md">AppSheet</span>
-                                    <span class="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs font-medium rounded-md">Google Sheets</span>
-                                    <span class="px-2 py-1 bg-orange-500/20 text-orange-300 text-xs font-medium rounded-md">Workflow</span>
-                                </div>
-                                
-                                <div class="absolute inset-0 rounded-2xl border-2 border-orange-400/0 group-hover:border-orange-400/50 transition-colors duration-300"></div>
-                            </div>
-                        </div>
-
-                        <!-- Business Intelligence -->
-                        <div class="group relative card-hover">
-                            <div class="relative p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-700/50 shadow-xl">
-                                <div class="relative mb-6">
-                                    <div class="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="absolute -inset-2 bg-violet-500/20 rounded-2xl blur group-hover:bg-violet-400/30 transition-colors duration-300"></div>
-                                </div>
-                                
-                                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-violet-100 transition-colors duration-300">
-                                    Business Intelligence
-                                </h3>
-                                
-                                <p class="text-slate-300 mb-6 leading-relaxed">
-                                    Implementamos soluciones de inteligencia empresarial que convierten datos complejos en información estratégica para la toma de decisiones.
-                                </p>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs font-medium rounded-md">ETL</span>
-                                    <span class="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs font-medium rounded-md">Data Warehouse</span>
-                                    <span class="px-2 py-1 bg-violet-500/20 text-violet-300 text-xs font-medium rounded-md">Reporting</span>
-                                </div>
-                                
-                                <div class="absolute inset-0 rounded-2xl border-2 border-violet-400/0 group-hover:border-violet-400/50 transition-colors duration-300"></div>
-                            </div>
-                        </div>
-
-                        <!-- Consulting -->
-                        <div class="group relative card-hover">
-                            <div class="relative p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-700/50 shadow-xl">
-                                <div class="relative mb-6">
-                                    <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="absolute -inset-2 bg-cyan-500/20 rounded-2xl blur group-hover:bg-cyan-400/30 transition-colors duration-300"></div>
-                                </div>
-                                
-                                <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-cyan-100 transition-colors duration-300">
-                                    Consultoría Digital
-                                </h3>
-                                
-                                <p class="text-slate-300 mb-6 leading-relaxed">
-                                    Asesoramos tu empresa en la transformación digital, identificando oportunidades y creando estrategias tecnológicas personalizadas.
-                                </p>
-                                
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-medium rounded-md">Estrategia</span>
-                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-medium rounded-md">Procesos</span>
-                                    <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-medium rounded-md">Optimización</span>
-                                </div>
-                                
-                                <div class="absolute inset-0 rounded-2xl border-2 border-cyan-400/0 group-hover:border-cyan-400/50 transition-colors duration-300"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section id="contacto" class="py-20 bg-gradient-to-b from-slate-800/50 to-slate-900/80">
-                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <div class="space-y-8">
-                        <div class="space-y-4">
-                            <h2 class="text-4xl lg:text-5xl font-space-grotesk font-bold text-white">
-                                ¿Listo para <span class="gradient-text">Transformar</span> tu Negocio?
-                            </h2>
-                            <p class="text-xl text-slate-300 max-w-2xl mx-auto">
-                                Agenda una consulta gratuita y descubre cómo nuestras soluciones pueden 
-                                potenciar tu empresa hacia el siguiente nivel.
-                            </p>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                            <a href="mailto:contacto@sqsmartsolutions.com" class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-                                <span class="relative z-10 flex items-center gap-2">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                    </svg>
-                                    Contactar Ahora
-                                </span>
-                                <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </a>
-
-                            <div class="flex items-center gap-4 text-slate-300">
-                                <span>o escríbenos por</span>
-                                <a href="https://wa.me/5215536799199" target="_blank" class="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors duration-300">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.520-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                                    </svg>
-                                    WhatsApp
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Stats -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-slate-700/50">
-                            <div class="space-y-2">
-                                <div class="text-3xl font-bold text-blue-400">50+</div>
-                                <div class="text-sm text-slate-400">Proyectos Completados</div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="text-3xl font-bold text-blue-400">100%</div>
-                                <div class="text-sm text-slate-400">Satisfacción Cliente</div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="text-3xl font-bold text-blue-400">24/7</div>
-                                <div class="text-sm text-slate-400">Soporte Técnico</div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="text-3xl font-bold text-blue-400">5★</div>
-                                <div class="text-sm text-slate-400">Calificación Promedio</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="bg-slate-900/90 border-t border-slate-700/50">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <div class="flex flex-col md:flex-row items-center justify-between">
-                        <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="text-blue-400" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
-                            </svg>
-                            <div>
-                                <h3 class="font-space-grotesk font-bold text-white">SQ Smart Solutions</h3>
-                                <p class="text-xs text-slate-400">Soluciones Digitales Inteligentes</p>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center md:text-right">
-                            <p class="text-slate-400 text-sm">© 2025 SQ Smart Solutions. Todos los derechos reservados.</p>
-                            <p class="text-slate-500 text-xs mt-1">Transformando empresas a través de la tecnología</p>
-                        </div>
-                    </div>
+            <footer class="border-t border-slate-900/5 bg-white/60">
+                <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+                    <p>© 2026 SQ Smart Solutions. Todos los derechos reservados.</p>
+                    <p>Control, automatizacion y decision para empresas que necesitan orden y visibilidad.</p>
                 </div>
             </footer>
         </div>
 
         <script>
-            // Mobile menu toggle
-            document.getElementById('mobile-menu-button').addEventListener('click', function () {
-                const menu = document.getElementById('mobile-menu');
-                menu.classList.toggle('hidden');
-            });
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const themeToggle = document.getElementById('theme-toggle');
+            const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+            const themeLabel = document.getElementById('theme-toggle-label');
+            const themeIconSun = document.getElementById('theme-icon-sun');
+            const themeIconMoon = document.getElementById('theme-icon-moon');
 
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        
-                        // Close mobile menu if open
-                        const mobileMenu = document.getElementById('mobile-menu');
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                    }
-                });
-            });
+            const applyTheme = (theme) => {
+                const isDark = theme === 'dark';
+                
+                // Actualizar el atributo de tema
+                document.documentElement.dataset.theme = theme;
 
-            // Add scroll-based animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+                // Actualizar etiqueta
+                if (themeLabel) {
+                    themeLabel.textContent = isDark ? 'Claro' : 'Oscuro';
+                }
+
+                // Animar iconos con rotación suave
+                if (themeIconSun && themeIconMoon) {
+                    themeIconSun.style.transform = isDark ? 'rotate(180deg)' : 'rotate(0deg)';
+                    themeIconMoon.style.transform = isDark ? 'rotate(0deg)' : 'rotate(180deg)';
+                    themeIconSun.classList.toggle('hidden', !isDark);
+                    themeIconMoon.classList.toggle('hidden', isDark);
+                }
+
+                // Actualizar botón móvil
+                if (mobileThemeToggle) {
+                    mobileThemeToggle.textContent = isDark ? 'Cambiar a claro' : 'Cambiar a oscuro';
+                }
+
+                // Guardar preferencia
+                localStorage.setItem('sq-theme', theme);
+                
+                // Disparar evento personalizado
+                window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
             };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
+            // Aplicar tema guardado o preferencia del sistema
+            const savedTheme = localStorage.getItem('sq-theme');
+            const preferredTheme = savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            applyTheme(preferredTheme);
+
+            // Escuchar cambios en las preferencias del sistema
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                if (!localStorage.getItem('sq-theme')) {
+                    applyTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+
+            // Toggle de tema en escritorio
+            themeToggle?.addEventListener('click', () => {
+                const currentTheme = document.documentElement.dataset.theme;
+                applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+
+            // Toggle de tema en móvil
+            mobileThemeToggle?.addEventListener('click', () => {
+                const currentTheme = document.documentElement.dataset.theme;
+                applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+
+            // Menú móvil
+            mobileMenuButton?.addEventListener('click', function () {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', String(!isHidden));
+            });
+
+            // Scroll suave a secciones
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener('click', function (event) {
+                    const href = this.getAttribute('href');
+                    const target = href ? document.querySelector(href) : null;
+
+                    if (!target) {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton?.setAttribute('aria-expanded', 'false');
                     }
                 });
-            }, observerOptions);
-
-            // Observe elements for animations
-            document.querySelectorAll('.card-hover').forEach(el => {
-                observer.observe(el);
             });
-        </script>
 
+            // Observador para animaciones de reveal
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+            document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+        </script>
     </body>
 </html>

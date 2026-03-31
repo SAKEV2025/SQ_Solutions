@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/vista', function () {
+    return view('vista');
+})->name('vista');
+
 Route::get('/contacto', [SolicitudController::class, 'create'])->name('solicitud.create');
 Route::post('/solicitud', [SolicitudController::class, 'store'])->name('solicitud.store');
 
