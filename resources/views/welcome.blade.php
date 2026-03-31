@@ -37,19 +37,19 @@
             }
 
             html[data-theme="dark"] {
-                --page-bg: #0d0221;
-                --page-fg: #f0e5ff;
-                --surface: rgba(26, 0, 51, 0.72);
-                --surface-strong: rgba(26, 0, 51, 0.9);
-                --surface-muted: rgba(26, 0, 51, 0.45);
-                --border-soft: rgba(0, 245, 255, 0.16);
-                --border-medium: rgba(255, 0, 110, 0.24);
-                --shadow-soft: 0 24px 80px rgba(13, 2, 33, 0.35);
-                --text-primary: #f0e5ff;
-                --text-secondary: #e5deff;
-                --text-muted: #c9b5ff;
-                --accent-primary: #ff006e;
-                --accent-secondary: #00f5ff;
+                --page-bg: #0d1b2e;
+                --page-fg: #e8f0fe;
+                --surface: #1a2d4a;
+                --surface-strong: #1e3356;
+                --surface-muted: #152438;
+                --border-soft: #1e3a5f;
+                --border-medium: #2a4a72;
+                --shadow-soft: 0 24px 80px #050d18;
+                --text-primary: #e8f0fe;
+                --text-secondary: #b8d4f0;
+                --text-muted: #6fa0cc;
+                --accent-primary: #1456b8;
+                --accent-secondary: #c08457;
                 color-scheme: dark;
             }
 
@@ -93,7 +93,8 @@
             }
 
             html[data-theme="dark"] .card-rise:hover {
-                box-shadow: 0 24px 50px rgba(255, 0, 110, 0.3);
+                box-shadow: 0 24px 50px #050d18;
+                border-color: #2a4a72;
             }
 
             .reveal {
@@ -114,38 +115,33 @@
             }
 
             html[data-theme="dark"] .mesh {
-                background-image: radial-gradient(circle at 1px 1px, rgba(0, 245, 255, 0.12) 1px, transparent 0);
+                background-image: radial-gradient(circle at 1px 1px, #1e3a5f 1px, transparent 0);
             }
 
             html[data-theme="dark"] .text-slate-950,
             html[data-theme="dark"] .text-slate-900 {
-                color: #f8fafc !important;
-                transition: color 300ms ease;
+                color: #e8f0fe !important;
             }
 
             html[data-theme="dark"] .text-slate-800,
             html[data-theme="dark"] .text-slate-700 {
-                color: #e2e8f0 !important;
-                transition: color 300ms ease;
+                color: #c8def4 !important;
             }
 
             html[data-theme="dark"] .text-slate-600,
             html[data-theme="dark"] .text-slate-500 {
-                color: #94a3b8 !important;
-                transition: color 300ms ease;
+                color: #7fb5d9 !important;
             }
 
             html[data-theme="dark"] .text-slate-300 {
-                color: #cbd5e1 !important;
-                transition: color 300ms ease;
+                color: #b8d4f0 !important;
             }
 
             html[data-theme="dark"] nav,
             html[data-theme="dark"] footer,
             html[data-theme="dark"] #contacto {
-                background: rgba(26, 0, 51, 0.7) !important;
-                border-color: rgba(0, 245, 255, 0.14) !important;
-                transition: background-color 300ms ease, border-color 300ms ease;
+                background: #0f2035 !important;
+                border-color: #1e3a5f !important;
             }
 
             html[data-theme="dark"] section,
@@ -153,41 +149,71 @@
             html[data-theme="dark"] .glass-panel,
             html[data-theme="dark"] .card-rise,
             html[data-theme="dark"] [class*="bg-white"] {
-                background-color: var(--surface-strong) !important;
-                border-color: var(--border-soft) !important;
+                background-color: #1a2d4a !important;
+                border-color: #1e3a5f !important;
                 color: var(--page-fg);
-                transition: background-color 300ms ease, border-color 300ms ease, color 300ms ease;
             }
 
             html[data-theme="dark"] [class*="bg-white/5"] {
-                background-color: rgba(26, 0, 51, 0.35) !important;
-                transition: background-color 300ms ease;
+                background-color: #162338 !important;
             }
 
+            html[data-theme="dark"] [class*="bg-white/60"],
             html[data-theme="dark"] [class*="bg-white/70"],
             html[data-theme="dark"] [class*="bg-white/75"],
             html[data-theme="dark"] [class*="bg-white/80"],
-            html[data-theme="dark"] [class*="bg-white/85"] {
-                background-color: rgba(26, 0, 51, 0.78) !important;
-                transition: background-color 300ms ease;
+            html[data-theme="dark"] [class*="bg-white/85"],
+            html[data-theme="dark"] [class*="bg-white/95"] {
+                background-color: #1a2d4a !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-950"] {
-                background-color: #0d0221 !important;
-                transition: background-color 300ms ease;
+                background-color: #081524 !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-900"] {
-                background-color: #1a0033 !important;
-                transition: background-color 300ms ease;
+                background-color: #0f2035 !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-50"],
             html[data-theme="dark"] [class*="bg-blue-50"],
             html[data-theme="dark"] [class*="bg-amber-50"],
             html[data-theme="dark"] [class*="bg-sky-50"] {
-                background-color: rgba(26, 0, 51, 0.5) !important;
-                transition: background-color 300ms ease;
+                background-color: #1a2d4a !important;
+            }
+
+            /* Buttons and action links use primary color in dark mode */
+            html[data-theme="dark"] a.bg-slate-900,
+            html[data-theme="dark"] button.bg-slate-900 {
+                background-color: #1456b8 !important;
+                color: #ffffff !important;
+            }
+
+            html[data-theme="dark"] a.hover\:bg-slate-800:hover,
+            html[data-theme="dark"] button.hover\:bg-slate-800:hover {
+                background-color: #1769d4 !important;
+            }
+
+            /* Theme toggle and mobile menu button */
+            html[data-theme="dark"] #theme-toggle,
+            html[data-theme="dark"] #mobile-menu-button {
+                background-color: #1e3356 !important;
+                border-color: #2a4a72 !important;
+                color: #e8f0fe !important;
+            }
+
+            html[data-theme="dark"] #theme-toggle:hover {
+                background-color: #243d66 !important;
+            }
+
+            /* Page background elements in dark mode */
+            html[data-theme="dark"] #page-bg {
+                background: #0d1b2e !important;
+            }
+
+            html[data-theme="dark"] .bg-glow {
+                background-color: #1a2d4a !important;
+                opacity: 0.4;
             }
 
             /* Animación suave para botones y enlaces */
@@ -204,11 +230,11 @@
     </head>
     <body class="bg-black text-slate-900 antialiased overflow-x-hidden">
         <div class="fixed inset-0 -z-10">
-            <div class="absolute inset-0 bg-gradient-to-br from-[#f8f3ea] via-white to-[#e8efe9]"></div>
+            <div id="page-bg" class="absolute inset-0 bg-gradient-to-br from-[#f8f3ea] via-white to-[#e8efe9]"></div>
             <div class="absolute inset-0 mesh opacity-70"></div>
-            <div class="absolute -top-32 right-[-8rem] h-96 w-96 rounded-full bg-blue-200/50 blur-3xl"></div>
-            <div class="absolute top-[32rem] left-[-8rem] h-96 w-96 rounded-full bg-blue-200/50 blur-3xl"></div>
-            <div class="absolute bottom-[-8rem] right-1/4 h-80 w-80 rounded-full bg-blue-200/40 blur-3xl"></div>
+            <div class="bg-glow absolute -top-32 right-[-8rem] h-96 w-96 rounded-full bg-blue-200/50 blur-3xl"></div>
+            <div class="bg-glow absolute top-[32rem] left-[-8rem] h-96 w-96 rounded-full bg-blue-200/50 blur-3xl"></div>
+            <div class="bg-glow absolute bottom-[-8rem] right-1/4 h-80 w-80 rounded-full bg-blue-200/40 blur-3xl"></div>
         </div>
 
         <div class="relative z-10">
