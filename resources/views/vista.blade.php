@@ -21,13 +21,13 @@
     </head>
     <body class="bg-[#FDFDFC] dark:bg-[#0d0221] text-[#1b1b18] dark:text-[#f0e5ff]">
         <!-- Navbar Rediseñado -->
-        <nav class="sticky top-0 z-50 border-b border-slate-900/10 dark:border-[#ff006e]/15 bg-white/70 dark:bg-[#1a0033]/70 backdrop-blur-xl">
+        <nav class="sticky top-0 z-50 border-b border-slate-900/10 dark:border-[#ee7760]/15 bg-white/70 dark:bg-[#211b32]/70 backdrop-blur-xl">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 items-center justify-between">
                     <!-- Logo y Branding -->
                     <a href="/" class="flex items-center gap-3 group">
-                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#ff006e] to-[#00f5ff] p-0.5 shadow-lg shadow-[#ff006e]/20 dark:shadow-[#ff006e]/30 transition-all duration-300 group-hover:shadow-[#ff006e]/40">
-                            <div class="h-full w-full rounded-[10px] bg-white dark:bg-[#1a0033] flex items-center justify-center">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#ee7760] to-[#fbc64d] p-0.5 shadow-lg shadow-[#ee7760]/20 dark:shadow-[#ee7760]/30 transition-all duration-300 group-hover:shadow-[#ee7760]/40">
+                            <div class="h-full w-full rounded-[10px] bg-white dark:bg-[#211b32] flex items-center justify-center">
                                 <img src="{{ asset('landing/sq.png') }}" alt="SQ Smart Solutions" class="w-7 h-7 object-contain">
                             </div>
                         </div>
@@ -39,15 +39,15 @@
 
                     <!-- Menu Links Desktop -->
                     <div class="hidden md:flex items-center gap-1">
-                        <a href="#propuesta" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg transition-all duration-300 hover:text-slate-900 dark:hover:text-[#ff006e] hover:bg-slate-100 dark:hover:bg-[#ff006e]/10">Propuesta</a>
-                        <a href="#impacto" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg transition-all duration-300 hover:text-slate-900 dark:hover:text-[#ff006e] hover:bg-slate-100 dark:hover:bg-[#ff006e]/10">Impacto</a>
-                        <a href="#metodo" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg transition-all duration-300 hover:text-slate-900 dark:hover:text-[#ff006e] hover:bg-slate-100 dark:hover:bg-[#ff006e]/10">Método</a>
-                        <div class="w-px h-6 bg-slate-200 dark:bg-[#00f5ff]/10 mx-2"></div>
+                        <a href="#propuesta" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg transition-all duration-300 hover:text-slate-900 dark:hover:text-[#ee7760] hover:bg-slate-100 dark:hover:bg-[#ee7760]/10">Propuesta</a>
+                        <a href="#impacto" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg transition-all duration-300 hover:text-slate-900 dark:hover:text-[#ee7760] hover:bg-slate-100 dark:hover:bg-[#ee7760]/10">Impacto</a>
+                        <a href="#metodo" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg transition-all duration-300 hover:text-slate-900 dark:hover:text-[#ee7760] hover:bg-slate-100 dark:hover:bg-[#ee7760]/10">Método</a>
+                        <div class="w-px h-6 bg-slate-200 dark:bg-[#fbc64d]/10 mx-2"></div>
                     </div>
 
                     <!-- CTA Buttons -->
                     <div class="hidden md:flex items-center gap-3">
-                        <button id="theme-toggle-nav" type="button" class="p-2 rounded-lg border border-slate-200 dark:border-[#00f5ff]/20 bg-white dark:bg-[#1a0033]/50 text-slate-600 dark:text-[#00f5ff] hover:bg-slate-50 dark:hover:bg-[#00f5ff]/10 transition-all duration-300">
+                        <button id="theme-toggle-nav" type="button" class="p-2 rounded-lg border border-slate-200 dark:border-[#fbc64d]/20 bg-white dark:bg-[#211b32]/50 text-slate-600 dark:text-[#fbc64d] hover:bg-slate-50 dark:hover:bg-[#fbc64d]/10 transition-all duration-300">
                             <svg class="theme-icon-sun h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="5"></circle>
                                 <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m5.08 0l4.24-4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m5.08 0l4.24 4.24M19 12h6"></path>
@@ -56,13 +56,13 @@
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                             </svg>
                         </button>
-                        <a href="#contacto" class="px-5 py-2.5 text-sm font-semibold rounded-full bg-gradient-to-r from-[#ff006e] to-[#b603ff] text-white shadow-lg shadow-[#ff006e]/30 hover:shadow-[#ff006e]/50 transition-all duration-300 hover:-translate-y-0.5">
+                        <a href="#contacto" class="px-5 py-2.5 text-sm font-semibold rounded-full bg-gradient-to-r from-[#ee7760] to-[#854593] text-white shadow-lg shadow-[#ee7760]/30 hover:shadow-[#ee7760]/50 transition-all duration-300 hover:-translate-y-0.5">
                             Agenda una llamada
                         </a>
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-[#00f5ff]/20 bg-white dark:bg-[#1a0033]/50 text-slate-600 dark:text-[#00f5ff]">
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-[#fbc64d]/20 bg-white dark:bg-[#211b32]/50 text-slate-600 dark:text-[#fbc64d]">
                         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -70,13 +70,13 @@
                 </div>
 
                 <!-- Mobile Menu -->
-                <div id="mobile-menu" class="hidden border-t border-slate-200 dark:border-[#00f5ff]/10 bg-white/95 dark:bg-[#1a0033]/95 md:hidden">
+                <div id="mobile-menu" class="hidden border-t border-slate-200 dark:border-[#fbc64d]/10 bg-white/95 dark:bg-[#211b32]/95 md:hidden">
                     <div class="px-4 py-4 space-y-2">
-                        <a href="#propuesta" class="block px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg hover:bg-slate-100 dark:hover:bg-[#ff006e]/10 transition">Propuesta</a>
-                        <a href="#impacto" class="block px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg hover:bg-slate-100 dark:hover:bg-[#ff006e]/10 transition">Impacto</a>
-                        <a href="#metodo" class="block px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg hover:bg-slate-100 dark:hover:bg-[#ff006e]/10 transition">Método</a>
-                        <div class="h-px bg-slate-200 dark:bg-[#00f5ff]/10 my-2"></div>
-                        <a href="#contacto" class="block px-4 py-2.5 text-sm font-semibold rounded-lg bg-gradient-to-r from-[#ff006e] to-[#b603ff] text-white text-center">Agenda una llamada</a>
+                        <a href="#propuesta" class="block px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg hover:bg-slate-100 dark:hover:bg-[#ee7760]/10 transition">Propuesta</a>
+                        <a href="#impacto" class="block px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg hover:bg-slate-100 dark:hover:bg-[#ee7760]/10 transition">Impacto</a>
+                        <a href="#metodo" class="block px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-[#c9b5ff] rounded-lg hover:bg-slate-100 dark:hover:bg-[#ee7760]/10 transition">Método</a>
+                        <div class="h-px bg-slate-200 dark:bg-[#fbc64d]/10 my-2"></div>
+                        <a href="#contacto" class="block px-4 py-2.5 text-sm font-semibold rounded-lg bg-gradient-to-r from-[#ee7760] to-[#854593] text-white text-center">Agenda una llamada</a>
                     </div>
                 </div>
             </div>

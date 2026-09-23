@@ -38,38 +38,38 @@
                 --input-border: #d1d5db;
                 --input-text: #0f172a;
                 --input-placeholder: #9ca3af;
-                --input-focus-border: #1456b8;
-                --input-focus-shadow: 0 0 0 3px #dbeafe;
-                --accent-primary: #1456b8;
-                --accent-secondary: #c08457;
+                --input-focus-border: #854593;
+                --input-focus-shadow: 0 0 0 3px #f2e9f5;
+                --accent-primary: #854593;
+                --accent-secondary: #ee7760;
                 --btn-primary-bg: #0f172a;
                 --btn-primary-hover: #1e293b;
                 color-scheme: light;
             }
 
             html[data-theme="dark"] {
-                --page-bg: #0d1b2e;
-                --page-fg: #e8f0fe;
-                --surface: #1a2d4a;
-                --surface-strong: #1e3356;
-                --surface-muted: #152438;
-                --border-soft: #1e3a5f;
-                --border-medium: #2a4a72;
-                --shadow-soft: 0 24px 80px #050d18;
-                --text-primary: #e8f0fe;
-                --text-secondary: #b8d4f0;
-                --text-muted: #6fa0cc;
-                --text-label: #b8d4f0;
-                --input-bg: #152438;
-                --input-border: #1e3a5f;
-                --input-text: #e8f0fe;
-                --input-placeholder: #6fa0cc;
-                --input-focus-border: #3b82f6;
-                --input-focus-shadow: 0 0 0 3px #0d2040;
-                --accent-primary: #1456b8;
-                --accent-secondary: #c08457;
-                --btn-primary-bg: #1456b8;
-                --btn-primary-hover: #1769d4;
+                --page-bg: #19142a;
+                --page-fg: #f9f3ff;
+                --surface: #28213b;
+                --surface-strong: #35294b;
+                --surface-muted: #211b32;
+                --border-soft: #49345d;
+                --border-medium: #654572;
+                --shadow-soft: 0 24px 80px #120c20;
+                --text-primary: #f9f3ff;
+                --text-secondary: #e3d3ed;
+                --text-muted: #c4a9d0;
+                --text-label: #e3d3ed;
+                --input-bg: #211b32;
+                --input-border: #49345d;
+                --input-text: #f9f3ff;
+                --input-placeholder: #c4a9d0;
+                --input-focus-border: #fbc64d;
+                --input-focus-shadow: 0 0 0 3px #49345d;
+                --accent-primary: #854593;
+                --accent-secondary: #ee7760;
+                --btn-primary-bg: #854593;
+                --btn-primary-hover: #a35aaf;
                 color-scheme: dark;
             }
 
@@ -222,7 +222,7 @@
 
             .info-card:hover {
                 transform: translateY(-4px);
-                box-shadow: 0 16px 40px #050d18;
+                box-shadow: 0 16px 40px #120c20;
             }
 
             /* ─── Labels / helper text ─── */
@@ -300,13 +300,13 @@
             /* ─── Theme toggle & mobile menu ─── */
             html[data-theme="dark"] #theme-toggle,
             html[data-theme="dark"] #mobile-menu-button {
-                background-color: #1e3356 !important;
-                border-color: #2a4a72 !important;
-                color: #e8f0fe !important;
+                background-color: #35294b !important;
+                border-color: #654572 !important;
+                color: #f9f3ff !important;
             }
 
             html[data-theme="dark"] #theme-toggle:hover {
-                background-color: #243d66 !important;
+                background-color: #49345d !important;
             }
 
             /* Animación suave para botones y enlaces */
@@ -562,7 +562,7 @@
                                     <option value="dashboard" {{ old('tipo_proyecto') == 'dashboard' ? 'selected' : '' }}>📊 Dashboard & Analytics</option>
                                     <option value="web" {{ old('tipo_proyecto') == 'web' ? 'selected' : '' }}>💻 Desarrollo Web / Aplicación</option>
                                     <option value="base_datos" {{ old('tipo_proyecto') == 'base_datos' ? 'selected' : '' }}>🗄️ Base de Datos & SQL</option>
-                                    <option value="appsheet" {{ old('tipo_proyecto') == 'appsheet' ? 'selected' : '' }}>📱 App Móvil (AppSheet)</option>
+                                    <option value="appsheet" {{ old('tipo_proyecto') == 'appsheet' ? 'selected' : '' }}>📱 Aplicación móvil / solución sin código</option>
                                     <option value="business_intelligence" {{ old('tipo_proyecto') == 'business_intelligence' ? 'selected' : '' }}>🧠 Business Intelligence</option>
                                     <option value="consultoria" {{ old('tipo_proyecto') == 'consultoria' ? 'selected' : '' }}>💼 Consultoría Digital</option>
                                     <option value="otro" {{ old('tipo_proyecto') == 'otro' ? 'selected' : '' }}>🔧 Otro</option>
@@ -753,7 +753,7 @@
                                 </div>
                                 <span class="text-sm leading-relaxed" style="color: var(--text-secondary)">
                                     Acepto que SQ Smart Solutions procese mis datos para responder a esta solicitud.
-                                    La información proporcionada es confidencial y no será compartida con terceros.
+                                    Usaremos tus datos de contacto para responder a tu solicitud.
                                 </span>
                             </label>
                             @error('acepta_privacidad')
@@ -767,7 +767,7 @@
                         <button
                             type="submit"
                             class="inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold text-white shadow-xl transition hover:-translate-y-0.5"
-                            style="background-color: var(--btn-primary-bg); box-shadow: 0 8px 24px #050d1880;"
+                            style="background-color: var(--btn-primary-bg); box-shadow: 0 8px 24px #120c2080;"
                             onmouseover="this.style.backgroundColor='var(--btn-primary-hover)'"
                             onmouseout="this.style.backgroundColor='var(--btn-primary-bg)'"
                         >
@@ -777,7 +777,7 @@
                             Enviar Solicitud de Proyecto
                         </button>
                         <p class="text-xs mt-3" style="color: var(--text-muted)">
-                            Te contactaremos en un plazo de 24–48 horas hábiles.
+                            Revisaremos tu solicitud y te responderemos por el medio indicado.
                         </p>
                     </div>
                 </form>
@@ -791,8 +791,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold mb-2" style="color: var(--text-primary)">Respuesta Rápida</h4>
-                    <p class="text-sm" style="color: var(--text-secondary)">Te respondemos en 24–48 horas hábiles con una propuesta inicial.</p>
+                    <h4 class="font-semibold mb-2" style="color: var(--text-primary)">Primer contacto</h4>
+                    <p class="text-sm" style="color: var(--text-secondary)">Revisamos los objetivos y el alcance antes de preparar una propuesta.</p>
                 </div>
 
                 <div class="info-card p-6 text-center reveal">
@@ -811,8 +811,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
-                    <h4 class="font-semibold mb-2" style="color: var(--text-primary)">Equipo Experto</h4>
-                    <p class="text-sm" style="color: var(--text-secondary)">Más de 50 proyectos entregados con 100% de satisfacción en cada cliente.</p>
+                    <h4 class="font-semibold mb-2" style="color: var(--text-primary)">Enfoque a medida</h4>
+                    <p class="text-sm" style="color: var(--text-secondary)">Revisamos cada solicitud para proponer un alcance acorde con el problema y el presupuesto.</p>
                 </div>
             </div>
         </main>

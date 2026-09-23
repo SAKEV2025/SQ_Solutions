@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="SQ Smart Solutions convierte procesos dispersos en control operativo, automatizacion y tableros ejecutivos para tomar mejores decisiones.">
+        <meta name="description" content="SQ Smart Solutions diseña software a medida, automatizaciones e inteligencia de datos para equipos que quieren trabajar con claridad.">
         <meta name="keywords" content="consultoria digital, automatizacion de procesos, tableros ejecutivos, indicadores, operaciones, analitica empresarial">
         <link rel="canonical" href="{{ url('/') }}" />
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
         <meta http-equiv="Pragma" content="no-cache">
         <meta http-equiv="Expires" content="0">
 
-        <title>SQ Smart Solutions - Control, automatizacion y decision</title>
+        <title>SQ Smart Solutions | Software, automatización y datos</title>
 
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=manrope:400,500,600,700,800&family=fraunces:500,600,700" rel="stylesheet" />
@@ -31,25 +31,25 @@
                 --text-primary: #0f172a;
                 --text-secondary: #475569;
                 --text-muted: #94a3b8;
-                --accent-primary: #1456b8;
-                --accent-secondary: #c08457;
+                --accent-primary: #854593;
+                --accent-secondary: #ee7760;
                 color-scheme: light;
             }
 
             html[data-theme="dark"] {
-                --page-bg: #0d1b2e;
-                --page-fg: #e8f0fe;
-                --surface: #1a2d4a;
-                --surface-strong: #1e3356;
-                --surface-muted: #152438;
-                --border-soft: #1e3a5f;
-                --border-medium: #2a4a72;
-                --shadow-soft: 0 24px 80px #050d18;
-                --text-primary: #e8f0fe;
-                --text-secondary: #b8d4f0;
-                --text-muted: #6fa0cc;
-                --accent-primary: #1456b8;
-                --accent-secondary: #c08457;
+                --page-bg: #19142a;
+                --page-fg: #f9f3ff;
+                --surface: #28213b;
+                --surface-strong: #35294b;
+                --surface-muted: #211b32;
+                --border-soft: #49345d;
+                --border-medium: #654572;
+                --shadow-soft: 0 24px 80px #120c20;
+                --text-primary: #f9f3ff;
+                --text-secondary: #e3d3ed;
+                --text-muted: #c4a9d0;
+                --accent-primary: #fbc64d;
+                --accent-secondary: #ee7760;
                 color-scheme: dark;
             }
 
@@ -69,7 +69,7 @@
             }
 
             .text-accent-gradient {
-                background: linear-gradient(135deg, #1456b8 0%, #2563eb 50%, #3b82f6 100%);
+                background: linear-gradient(135deg, #854593 0%, #ee7760 55%, #f9aa4c 100%);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -93,8 +93,8 @@
             }
 
             html[data-theme="dark"] .card-rise:hover {
-                box-shadow: 0 24px 50px #050d18;
-                border-color: #2a4a72;
+                box-shadow: 0 24px 50px #120c20;
+                border-color: #654572;
             }
 
             .reveal {
@@ -115,33 +115,33 @@
             }
 
             html[data-theme="dark"] .mesh {
-                background-image: radial-gradient(circle at 1px 1px, #1e3a5f 1px, transparent 0);
+                background-image: radial-gradient(circle at 1px 1px, #49345d 1px, transparent 0);
             }
 
             html[data-theme="dark"] .text-slate-950,
             html[data-theme="dark"] .text-slate-900 {
-                color: #e8f0fe !important;
+                color: #f9f3ff !important;
             }
 
             html[data-theme="dark"] .text-slate-800,
             html[data-theme="dark"] .text-slate-700 {
-                color: #c8def4 !important;
+                color: #e3d3ed !important;
             }
 
             html[data-theme="dark"] .text-slate-600,
             html[data-theme="dark"] .text-slate-500 {
-                color: #7fb5d9 !important;
+                color: #c4a9d0 !important;
             }
 
             html[data-theme="dark"] .text-slate-300 {
-                color: #b8d4f0 !important;
+                color: #e3d3ed !important;
             }
 
             html[data-theme="dark"] nav,
             html[data-theme="dark"] footer,
             html[data-theme="dark"] #contacto {
-                background: #0f2035 !important;
-                border-color: #1e3a5f !important;
+                background: #211b32 !important;
+                border-color: #49345d !important;
             }
 
             html[data-theme="dark"] section,
@@ -149,13 +149,13 @@
             html[data-theme="dark"] .glass-panel,
             html[data-theme="dark"] .card-rise,
             html[data-theme="dark"] [class*="bg-white"] {
-                background-color: #1a2d4a !important;
-                border-color: #1e3a5f !important;
+                background-color: #28213b !important;
+                border-color: #49345d !important;
                 color: var(--page-fg);
             }
 
             html[data-theme="dark"] [class*="bg-white/5"] {
-                background-color: #162338 !important;
+                background-color: #241d36 !important;
             }
 
             html[data-theme="dark"] [class*="bg-white/60"],
@@ -164,55 +164,55 @@
             html[data-theme="dark"] [class*="bg-white/80"],
             html[data-theme="dark"] [class*="bg-white/85"],
             html[data-theme="dark"] [class*="bg-white/95"] {
-                background-color: #1a2d4a !important;
+                background-color: #28213b !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-950"] {
-                background-color: #081524 !important;
+                background-color: #151022 !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-900"] {
-                background-color: #0f2035 !important;
+                background-color: #211b32 !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-50"],
             html[data-theme="dark"] [class*="bg-blue-50"],
             html[data-theme="dark"] [class*="bg-amber-50"],
             html[data-theme="dark"] [class*="bg-sky-50"] {
-                background-color: #1a2d4a !important;
+                background-color: #28213b !important;
             }
 
             /* Buttons and action links use primary color in dark mode */
             html[data-theme="dark"] a.bg-slate-900,
             html[data-theme="dark"] button.bg-slate-900 {
-                background-color: #1456b8 !important;
+                background-color: #854593 !important;
                 color: #ffffff !important;
             }
 
             html[data-theme="dark"] a.hover\:bg-slate-800:hover,
             html[data-theme="dark"] button.hover\:bg-slate-800:hover {
-                background-color: #1769d4 !important;
+                background-color: #a35aaf !important;
             }
 
             /* Theme toggle and mobile menu button */
             html[data-theme="dark"] #theme-toggle,
             html[data-theme="dark"] #mobile-menu-button {
-                background-color: #1e3356 !important;
-                border-color: #2a4a72 !important;
-                color: #e8f0fe !important;
+                background-color: #35294b !important;
+                border-color: #654572 !important;
+                color: #f9f3ff !important;
             }
 
             html[data-theme="dark"] #theme-toggle:hover {
-                background-color: #243d66 !important;
+                background-color: #49345d !important;
             }
 
             /* Page background elements in dark mode */
             html[data-theme="dark"] #page-bg {
-                background: #0d1b2e !important;
+                background: #19142a !important;
             }
 
             html[data-theme="dark"] .bg-glow {
-                background-color: #1a2d4a !important;
+                background-color: #28213b !important;
                 opacity: 0.4;
             }
 
@@ -230,11 +230,11 @@
     </head>
     <body class="bg-black text-slate-900 antialiased overflow-x-hidden">
         <div class="fixed inset-0 -z-10">
-            <div id="page-bg" class="absolute inset-0 bg-gradient-to-br from-[#f8f3ea] via-white to-[#e8efe9]"></div>
+            <div id="page-bg" class="absolute inset-0 bg-gradient-to-br from-[#fff5e7] via-white to-[#f2e9f5]"></div>
             <div class="absolute inset-0 mesh opacity-70"></div>
-            <div class="bg-glow absolute -top-32 right-[-8rem] h-96 w-96 rounded-full bg-blue-200/50 blur-3xl"></div>
-            <div class="bg-glow absolute top-[32rem] left-[-8rem] h-96 w-96 rounded-full bg-blue-200/50 blur-3xl"></div>
-            <div class="bg-glow absolute bottom-[-8rem] right-1/4 h-80 w-80 rounded-full bg-blue-200/40 blur-3xl"></div>
+            <div class="bg-glow absolute -top-32 right-[-8rem] h-96 w-96 rounded-full bg-amber-200/40 blur-3xl"></div>
+            <div class="bg-glow absolute top-[32rem] left-[-8rem] h-96 w-96 rounded-full bg-amber-200/40 blur-3xl"></div>
+            <div class="bg-glow absolute bottom-[-8rem] right-1/4 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl"></div>
         </div>
 
         <div class="relative z-10">
@@ -243,7 +243,7 @@
                     <div class="flex h-20 items-center justify-between">
                         <a href="{{ url('/') }}" class="flex items-center gap-3">
                             <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 shadow-lg shadow-slate-900/15">
-                                <img src="{{ asset('landing/sq.png') }}" alt="SQ Smart Solutions Logo" width="40" height="40" class="h-10 w-10 object-contain" loading="eager" decoding="async" />
+                                <img src="{{ asset('landing/sq.png') }}" alt="Símbolo de SQ Smart Solutions" width="40" height="40" class="h-10 w-10 object-contain" loading="eager" decoding="async" />
                             </div>
                             <div>
                                 <p class="text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-500">SQ Smart Solutions</p>
@@ -291,10 +291,10 @@
 
                             <div class="space-y-5">
                                 <h1 class="font-display max-w-3xl text-5xl font-semibold leading-[0.95] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
-                                    Convierte la operacion en una <span class="text-accent-gradient">ventaja competitiva</span>.
+                                    Software que conecta ideas, equipos y <span class="text-accent-gradient">resultados</span>.
                                 </h1>
                                 <p class="max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                                    Dise&ntilde;amos experiencias digitales que dan visibilidad, eliminan tareas repetitivas y convierten datos dispersos en decisiones claras para direcci&oacute;n, operaciones y ventas.
+                                    Creamos aplicaciones web, automatizaciones y herramientas de datos adaptadas a la forma en que trabaja cada organización.
                                 </p>
                             </div>
 
@@ -310,154 +310,63 @@
                             <div class="grid gap-4 sm:grid-cols-3">
                                 <div class="glass-panel rounded-3xl p-5">
                                     <p class="text-sm font-medium text-slate-500">Visibilidad</p>
-                                    <p class="mt-2 text-3xl font-semibold text-slate-950">360&deg;</p>
+                                    <p class="mt-2 text-2xl font-semibold text-slate-950">Datos claros</p>
                                     <p class="mt-1 text-sm text-slate-600">Indicadores para dirigir con contexto.</p>
                                 </div>
                                 <div class="glass-panel rounded-3xl p-5">
                                     <p class="text-sm font-medium text-slate-500">Automatizacion</p>
-                                    <p class="mt-2 text-3xl font-semibold text-slate-950">-33%</p>
+                                    <p class="mt-2 text-2xl font-semibold text-slate-950">Menos tareas</p>
                                     <p class="mt-1 text-sm text-slate-600">Menos carga operativa manual.</p>
                                 </div>
                                 <div class="glass-panel rounded-3xl p-5">
                                     <p class="text-sm font-medium text-slate-500">Decision</p>
-                                    <p class="mt-2 text-3xl font-semibold text-slate-950">En tiempo real</p>
+                                    <p class="mt-2 text-2xl font-semibold text-slate-950">Mejor contexto</p>
                                     <p class="mt-1 text-sm text-slate-600">Control de negocio sin esperar reportes tardios.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <style>
-                            @keyframes bounce-scale {
-                                0% {
-                                    opacity: 0;
-                                    transform: translateY(-80px) scale(0.7) rotateY(25deg);
-                                }
-                                40% {
-                                    opacity: 1;
-                                    transform: translateY(0) scale(1.08) rotateY(0deg);
-                                }
-                                65% {
-                                    transform: translateY(-15px) scale(1.02) rotateY(-5deg);
-                                }
-                                85% {
-                                    transform: translateY(0) scale(1.01) rotateY(0deg);
-                                }
-                                100% {
-                                    opacity: 1;
-                                    transform: translateY(0) scale(1) rotateY(0deg);
-                                }
-                            }
-
-
-
-                            .carousel-slide.bounce img {
-                                animation: bounce-scale 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-                            }
-                        </style>
-
-                        <div class="relative lg:pl-8">
-                            <div class="relative">
-                                <!-- Glow effect -->
-                                <div class="absolute"></div>
-                                
-                                <!-- Main carousel -->
-                                <div class="relative">
-                                    <div id="carousel-main" class="relative w-full max-w-2xl mx-auto h-96">
-                                        <!-- Carrusel de imágenes -->
-                                        <div class="carousel-container relative w-full h-full">
-                                            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out" style="opacity: 1;">
-                                                <img src="{{ asset('Carrusel_index/WhatsApp Image 2026-03-30 at 4.00.14 PM.jpeg') }}" class="w-full h-full object-contain bounce" alt="Carrusel Imagen 1" loading="lazy" />
-                                            </div>
-                                            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out" style="opacity: 0;">
-                                                <img src="{{ asset('Carrusel_index/WhatsApp Image 2026-03-30 at 4.00.14 PM (1).jpeg') }}" class="w-full h-full object-contain" alt="Carrusel Imagen 2" loading="lazy" />
-                                            </div>
-                                            <div class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out" style="opacity: 0;">
-                                                <img src="{{ asset('Carrusel_index/WhatsApp Image 2026-03-30 at 4.00.14 PM (2).jpeg') }}" class="w-full h-full object-contain" alt="Carrusel Imagen 3" loading="lazy" />
-                                            </div>
-                                        </div>
-                                        <!-- Overlay gradient -->
-                                        <div class="absolute inset-0 rounded-2xl"></div>
-
-                                        <!-- Indicadores de posición -->
-                                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-                                            <button class="carousel-indicator h-2 w-2 rounded-full bg-white/60 transition" style="width: 24px; background-color: rgba(255, 255, 255, 0.9);" data-index="0"></button>
-                                            <button class="carousel-indicator h-2 w-2 rounded-full bg-white/60 transition" data-index="1"></button>
-                                            <button class="carousel-indicator h-2 w-2 rounded-full bg-white/60 transition" data-index="2"></button>
-                                        </div>
+                        <div class="relative lg:pl-8" aria-label="Áreas de trabajo conectadas por soluciones digitales">
+                            <div class="glass-panel relative overflow-hidden rounded-[2rem] p-7 sm:p-10">
+                                <div class="absolute -right-14 -top-14 h-48 w-48 rounded-full bg-[#fbc64d]/25 blur-3xl"></div>
+                                <div class="absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-[#854593]/25 blur-3xl"></div>
+                                <p class="relative text-xs font-bold uppercase tracking-[0.25em] text-slate-500">Un ecosistema conectado</p>
+                                <div class="relative mt-8 grid grid-cols-2 gap-4">
+                                    <div class="rounded-2xl border border-slate-900/10 bg-white/80 p-5">
+                                        <span class="text-2xl" aria-hidden="true">◈</span>
+                                        <p class="mt-3 font-semibold text-slate-900">Aplicaciones</p>
+                                        <p class="mt-1 text-sm text-slate-600">Herramientas hechas a medida.</p>
                                     </div>
-
-                                    <!-- Floating elements -->
-                                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
-                                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-pulse" style="animation-delay: 1s;"></div>
+                                    <div class="rounded-2xl border border-slate-900/10 bg-white/80 p-5">
+                                        <span class="text-2xl" aria-hidden="true">⌁</span>
+                                        <p class="mt-3 font-semibold text-slate-900">Automatización</p>
+                                        <p class="mt-1 text-sm text-slate-600">Flujos de trabajo más simples.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-900/10 bg-white/80 p-5">
+                                        <span class="text-2xl" aria-hidden="true">▦</span>
+                                        <p class="mt-3 font-semibold text-slate-900">Datos</p>
+                                        <p class="mt-1 text-sm text-slate-600">Información fácil de consultar.</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-900/10 bg-white/80 p-5">
+                                        <span class="text-2xl" aria-hidden="true">◎</span>
+                                        <p class="mt-3 font-semibold text-slate-900">Seguimiento</p>
+                                        <p class="mt-1 text-sm text-slate-600">Visibilidad para cada equipo.</p>
+                                    </div>
+                                </div>
+                                <div class="relative mt-5 rounded-2xl bg-[#28213b] px-6 py-5 text-white">
+                                    <span class="font-display text-xl font-semibold text-[#fbc64d]">SQ Smart Solutions</span>
+                                    <p class="mt-1 text-sm text-[#e3d3ed]">Tecnología conectada con necesidades reales.</p>
                                 </div>
                             </div>
                         </div>
-
-                        <script>
-                            // Carrusel de imágenes con animación de rebote
-                            let currentSlide = 0;
-                            const slides = document.querySelectorAll('.carousel-slide');
-                            const indicators = document.querySelectorAll('.carousel-indicator');
-                            const carouselContainer = document.querySelector('.carousel-container');
-                            const totalSlides = slides.length;
-
-                            function showSlide(index) {
-                                slides.forEach((slide, i) => {
-                                    const isActive = i === index;
-                                    slide.style.opacity = isActive ? '1' : '0';
-                                    
-                                    // Agregar clase bounce cuando es visible
-                                    const img = slide.querySelector('img');
-                                    if (img) {
-                                        if (isActive) {
-                                            img.classList.remove('bounce');
-                                            void img.offsetWidth; // Trigger reflow
-                                            img.classList.add('bounce');
-                                        } else {
-                                            img.classList.remove('bounce');
-                                        }
-                                    }
-                                });
-                                
-                                indicators.forEach((btn, i) => {
-                                    if (i === index) {
-                                        btn.style.width = '24px';
-                                        btn.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-                                    } else {
-                                        btn.style.width = '8px';
-                                        btn.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
-                                    }
-                                });
-                            }
-
-                            function nextSlide() {
-                                currentSlide = (currentSlide + 1) % totalSlides;
-                                showSlide(currentSlide);
-                            }
-
-                            // Click en la imagen para cambiar
-                            carouselContainer.addEventListener('click', nextSlide);
-
-                            // Indicadores
-                            indicators.forEach(btn => {
-                                btn.addEventListener('click', (e) => {
-                                    e.stopPropagation();
-                                    currentSlide = parseInt(e.target.dataset.index);
-                                    showSlide(currentSlide);
-                                });
-                            });
-
-                            // Auto-rotate cada 5 segundos
-                            setInterval(nextSlide, 5000);
-                        </script>
                     </div>
                 </section>
 
                 <section id="propuesta" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
                     <div class="reveal mb-12 max-w-3xl">
-                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-700">Propuesta de valor</p>
-                        <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Una capa de claridad sobre la operacion real del negocio.</h2>
-                        <p class="mt-4 text-lg leading-8 text-slate-600">La pagina deja de hablar de herramientas y empieza a mostrar resultados. El mensaje central es simple: menos friccion, mas control, mejor decision.</p>
+                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#854593]">Propuesta de valor</p>
+                        <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Soluciones digitales construidas alrededor de cada reto.</h2>
+                        <p class="mt-4 text-lg leading-8 text-slate-600">Desde una aplicación interna hasta un tablero de indicadores: diseñamos herramientas que reúnen información, simplifican tareas y facilitan el seguimiento.</p>
                     </div>
 
                     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -465,12 +374,12 @@
                             <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7" /></svg>
                             </div>
-                            <h3 class="mt-5 text-xl font-semibold text-slate-950">Direccion visible</h3>
+                            <h3 class="mt-5 text-xl font-semibold text-slate-950">Datos accesibles</h3>
                             <p class="mt-3 text-sm leading-7 text-slate-600">Tableros y reportes que muestran el estado del negocio en una sola lectura.</p>
                         </article>
 
                         <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-600 text-white">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#854593] text-white">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v8m4-4H8" /></svg>
                             </div>
                             <h3 class="mt-5 text-xl font-semibold text-slate-950">Automatizacion util</h3>
@@ -478,15 +387,15 @@
                         </article>
 
                         <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500 text-white">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ee7760] text-white">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2.21 0-4 1.34-4 3s1.79 3 4 3 4 1.34 4 3-1.79 3-4 3m0-14v14" /></svg>
                             </div>
-                            <h3 class="mt-5 text-xl font-semibold text-slate-950">Valor financiero</h3>
-                            <p class="mt-3 text-sm leading-7 text-slate-600">La narrativa visual se enfoca en ahorro, productividad y conversion, no en buzzwords.</p>
+                            <h3 class="mt-5 text-xl font-semibold text-slate-950">Integración de datos</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600">Conectamos fuentes y transformamos información dispersa en vistas útiles para analizar y actuar.</p>
                         </article>
 
                         <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-600 text-white">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ac4479] text-white">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" /></svg>
                             </div>
                             <h3 class="mt-5 text-xl font-semibold text-slate-950">Escala ordenada</h3>
@@ -499,20 +408,20 @@
                     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                             <div class="reveal space-y-5">
-                                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">Impacto esperado</p>
-                                <h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">No vendemos tecnologia aislada. Dise&ntilde;amos una operacion mas rentable.</h2>
-                                <p class="max-w-xl text-lg leading-8 text-slate-300">El foco del redise&ntilde;o es que el usuario entienda en segundos por que SQ Smart Solutions importa: orden, velocidad, trazabilidad y decisiones con sustento.</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#fbc64d]">Impacto esperado</p>
+                                <h2 class="font-display text-4xl font-semibold tracking-tight sm:text-5xl">De una necesidad concreta a una herramienta que el equipo pueda usar.</h2>
+                                <p class="max-w-xl text-lg leading-8 text-slate-300">Cada solución parte del contexto del cliente. Definimos el alcance, construimos lo necesario y ajustamos la experiencia con quienes la usarán.</p>
                             </div>
 
                             <div class="grid gap-5 sm:grid-cols-2">
                                 <div class="reveal rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
                                     <p class="text-sm text-slate-300">Procesos con friccion</p>
-                                    <p class="mt-3 text-4xl font-semibold">1 sola vista</p>
+                                    <p class="mt-3 text-4xl font-semibold">Vista unificada</p>
                                     <p class="mt-3 text-sm leading-7 text-slate-300">Información operativa, comercial y directiva consolidada.</p>
                                 </div>
                                 <div class="reveal rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
                                     <p class="text-sm text-slate-300">Reportes lentos</p>
-                                    <p class="mt-3 text-4xl font-semibold">Tiempo real</p>
+                                    <p class="mt-3 text-4xl font-semibold">Indicadores útiles</p>
                                     <p class="mt-3 text-sm leading-7 text-slate-300">Indicadores listos para actuar, no solo para documentar.</p>
                                 </div>
                                 <div class="reveal rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
@@ -532,7 +441,7 @@
 
                 <section id="metodo" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
                     <div class="reveal mb-12 max-w-3xl">
-                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-700">Metodo</p>
+                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#854593]">Metodo</p>
                         <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Un proceso sencillo, consultivo y orientado a adopcion real.</h2>
                     </div>
 
@@ -563,7 +472,7 @@
                 <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
                     <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
                         <div class="reveal rounded-[2rem] bg-slate-900 p-8 text-white lg:p-10">
-                            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">Sectores que encajan</p>
+                            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#fbc64d]">Sectores que encajan</p>
                             <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Donde hay operacion, hay oportunidad de ordenar y crecer.</h2>
                             <p class="mt-4 max-w-xl text-lg leading-8 text-slate-300">La propuesta se adapta naturalmente a empresas con venta, seguimiento, aprobaciones, registros o indicadores que hoy viven dispersos en hojas, correos y sistemas inconexos.</p>
                             <div class="mt-8 flex flex-wrap gap-3">
@@ -578,7 +487,7 @@
 
                         <div class="reveal grid gap-5 sm:grid-cols-2">
                             <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
-                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-indigo-700">Prioridad</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-[#854593]">Prioridad</p>
                                 <h3 class="mt-4 text-xl font-semibold text-slate-950">Reducir caos operativo</h3>
                                 <p class="mt-3 text-sm leading-7 text-slate-600">Eliminar retrabajo, duplicidad y seguimiento manual.</p>
                             </div>
@@ -606,9 +515,9 @@
                         <div class="reveal rounded-[2rem] bg-slate-950 p-8 text-white shadow-2xl shadow-slate-950/20 lg:p-12">
                             <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                                 <div>
-                                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300">Contacto</p>
-                                    <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Si el negocio necesita claridad, la pagina debe demostrarla desde el primer vistazo.</h2>
-                                    <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-300">Esta propuesta ya no se presenta como un catalogo tecnico. Se presenta como una solucion de negocio con foco en control, velocidad y crecimiento ordenado.</p>
+                                    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#fbc64d]">Contacto</p>
+                                    <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Cuéntanos qué quieres construir o mejorar.</h2>
+                                    <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-300">Podemos ayudarte a explorar una aplicación, automatización, integración de datos o tablero. Empezamos por entender tu necesidad.</p>
                                 </div>
 
                                 <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
