@@ -8,7 +8,7 @@
         </div>
 
         <div class="flex justify-center lg:justify-end">
-            <img src="{{ asset('landing/logo-symbol.webp') }}" alt="Símbolo de SAKEV Solutions" width="256" height="256" loading="lazy" decoding="async" class="h-40 w-40 object-contain sm:h-48 sm:w-48" />
+            <img src="{{ asset('landing/LOGO_SAKEV.png') }}" alt="Símbolo de SAKEV Solutions" width="256" height="256" loading="lazy" decoding="async" class="h-40 w-40 object-contain sm:h-48 sm:w-48" />
         </div>
     </div>
 </section>
