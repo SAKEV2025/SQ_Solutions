@@ -20,36 +20,48 @@
 
         <style>
             :root {
-                --page-bg: #f4efe7;
-                --page-fg: #0f172a;
-                --surface: rgba(255, 255, 255, 0.72);
-                --surface-strong: rgba(255, 255, 255, 0.88);
-                --surface-muted: rgba(255, 255, 255, 0.55);
-                --border-soft: rgba(15, 23, 42, 0.08);
-                --border-medium: rgba(15, 23, 42, 0.12);
-                --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.08);
-                --text-primary: #0f172a;
-                --text-secondary: #475569;
-                --text-muted: #94a3b8;
-                --accent-primary: #854593;
-                --accent-secondary: #ee7760;
+                --page-bg: #fbf9fd;
+                --page-fg: #160f24;
+                --surface: rgba(255, 255, 255, 0.82);
+                --surface-strong: #ffffff;
+                --surface-muted: rgba(255, 255, 255, 0.65);
+                --border-soft: #ede4f5;
+                --border-medium: #dfd0ec;
+                --shadow-soft: 0 24px 80px rgba(121, 40, 202, 0.07);
+                --text-primary: #160f24;
+                --text-secondary: #5b4e72;
+                --text-muted: #8c7fa3;
+                --accent-primary: #7928ca;
+                --accent-secondary: #ff6b35;
+                --brand-gold: #fbb034;
+                --brand-orange: #ff6b35;
+                --brand-magenta: #d926a9;
+                --brand-violet: #7928ca;
+                --btn-primary-bg: #160f24;
+                --btn-primary-hover: #291b43;
                 color-scheme: light;
             }
 
             html[data-theme="dark"] {
-                --page-bg: #19142a;
-                --page-fg: #f9f3ff;
-                --surface: #28213b;
-                --surface-strong: #35294b;
-                --surface-muted: #211b32;
-                --border-soft: #49345d;
-                --border-medium: #654572;
-                --shadow-soft: 0 24px 80px #120c20;
-                --text-primary: #f9f3ff;
-                --text-secondary: #e3d3ed;
-                --text-muted: #c4a9d0;
-                --accent-primary: #fbc64d;
-                --accent-secondary: #ee7760;
+                --page-bg: #0e0918;
+                --page-fg: #f5f0fa;
+                --surface: #181126;
+                --surface-strong: #201633;
+                --surface-muted: #130c21;
+                --border-soft: #2f1d47;
+                --border-medium: #492b6e;
+                --shadow-soft: 0 24px 80px #06030c;
+                --text-primary: #ffffff;
+                --text-secondary: #cbbcd9;
+                --text-muted: #8b79a0;
+                --accent-primary: #fbb034;
+                --accent-secondary: #ff6b35;
+                --brand-gold: #fbb034;
+                --brand-orange: #ff6b35;
+                --brand-magenta: #d926a9;
+                --brand-violet: #7928ca;
+                --btn-primary-bg: #7928ca;
+                --btn-primary-hover: #903fe6;
                 color-scheme: dark;
             }
 
@@ -69,7 +81,7 @@
             }
 
             .text-accent-gradient {
-                background: linear-gradient(135deg, #854593 0%, #ee7760 55%, #f9aa4c 100%);
+                background: linear-gradient(135deg, #fbb034 0%, #ff6b35 30%, #d926a9 70%, #7928ca 100%);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -89,12 +101,12 @@
 
             .card-rise:hover {
                 transform: translateY(-6px);
-                box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+                box-shadow: 0 24px 50px rgba(121, 40, 202, 0.12);
             }
 
             html[data-theme="dark"] .card-rise:hover {
-                box-shadow: 0 24px 50px #120c20;
-                border-color: #654572;
+                box-shadow: 0 24px 50px #06030c;
+                border-color: #492b6e;
             }
 
             .reveal {
@@ -109,39 +121,39 @@
             }
 
             .mesh {
-                background-image: radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.08) 1px, transparent 0);
+                background-image: radial-gradient(circle at 1px 1px, rgba(121, 40, 202, 0.08) 1px, transparent 0);
                 background-size: 28px 28px;
                 transition: background-image 300ms ease;
             }
 
             html[data-theme="dark"] .mesh {
-                background-image: radial-gradient(circle at 1px 1px, #49345d 1px, transparent 0);
+                background-image: radial-gradient(circle at 1px 1px, #2f1d47 1px, transparent 0);
             }
 
             html[data-theme="dark"] .text-slate-950,
             html[data-theme="dark"] .text-slate-900 {
-                color: #f9f3ff !important;
+                color: #ffffff !important;
             }
 
             html[data-theme="dark"] .text-slate-800,
             html[data-theme="dark"] .text-slate-700 {
-                color: #e3d3ed !important;
+                color: #f5f0fa !important;
             }
 
             html[data-theme="dark"] .text-slate-600,
             html[data-theme="dark"] .text-slate-500 {
-                color: #c4a9d0 !important;
+                color: #cbbcd9 !important;
             }
 
             html[data-theme="dark"] .text-slate-300 {
-                color: #e3d3ed !important;
+                color: #cbbcd9 !important;
             }
 
             html[data-theme="dark"] nav,
             html[data-theme="dark"] footer,
             html[data-theme="dark"] #contacto {
-                background: #211b32 !important;
-                border-color: #49345d !important;
+                background: #181126 !important;
+                border-color: #2f1d47 !important;
             }
 
             html[data-theme="dark"] section,
@@ -149,13 +161,13 @@
             html[data-theme="dark"] .glass-panel,
             html[data-theme="dark"] .card-rise,
             html[data-theme="dark"] [class*="bg-white"] {
-                background-color: #28213b !important;
-                border-color: #49345d !important;
+                background-color: #181126 !important;
+                border-color: #2f1d47 !important;
                 color: var(--page-fg);
             }
 
             html[data-theme="dark"] [class*="bg-white/5"] {
-                background-color: #241d36 !important;
+                background-color: #201633 !important;
             }
 
             html[data-theme="dark"] [class*="bg-white/60"],
@@ -164,56 +176,56 @@
             html[data-theme="dark"] [class*="bg-white/80"],
             html[data-theme="dark"] [class*="bg-white/85"],
             html[data-theme="dark"] [class*="bg-white/95"] {
-                background-color: #28213b !important;
+                background-color: #181126 !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-950"] {
-                background-color: #151022 !important;
+                background-color: #0e0918 !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-900"] {
-                background-color: #211b32 !important;
+                background-color: #181126 !important;
             }
 
             html[data-theme="dark"] [class*="bg-slate-50"],
             html[data-theme="dark"] [class*="bg-blue-50"],
             html[data-theme="dark"] [class*="bg-amber-50"],
             html[data-theme="dark"] [class*="bg-sky-50"] {
-                background-color: #28213b !important;
+                background-color: #181126 !important;
             }
 
             /* Buttons and action links use primary color in dark mode */
             html[data-theme="dark"] a.bg-slate-900,
             html[data-theme="dark"] button.bg-slate-900 {
-                background-color: #854593 !important;
+                background-color: #7928ca !important;
                 color: #ffffff !important;
             }
 
             html[data-theme="dark"] a.hover\:bg-slate-800:hover,
             html[data-theme="dark"] button.hover\:bg-slate-800:hover {
-                background-color: #a35aaf !important;
+                background-color: #903fe6 !important;
             }
 
             /* Theme toggle and mobile menu button */
             html[data-theme="dark"] #theme-toggle,
             html[data-theme="dark"] #mobile-menu-button {
-                background-color: #35294b !important;
-                border-color: #654572 !important;
-                color: #f9f3ff !important;
+                background-color: #201633 !important;
+                border-color: #492b6e !important;
+                color: #f5f0fa !important;
             }
 
             html[data-theme="dark"] #theme-toggle:hover {
-                background-color: #49345d !important;
+                background-color: #2f1d47 !important;
             }
 
             /* Page background elements in dark mode */
             html[data-theme="dark"] #page-bg {
-                background: #19142a !important;
+                background: #0e0918 !important;
             }
 
             html[data-theme="dark"] .bg-glow {
-                background-color: #28213b !important;
-                opacity: 0.4;
+                background-color: #7928ca !important;
+                opacity: 0.18;
             }
 
             /* Animación suave para botones y enlaces */
@@ -230,11 +242,11 @@
     </head>
     <body class="bg-black text-slate-900 antialiased overflow-x-hidden">
         <div class="fixed inset-0 -z-10">
-            <div id="page-bg" class="absolute inset-0 bg-gradient-to-br from-[#fff5e7] via-white to-[#f2e9f5]"></div>
+            <div id="page-bg" class="absolute inset-0 bg-gradient-to-br from-[#fff8f0] via-[#fbf9fd] to-[#f4edf8]"></div>
             <div class="absolute inset-0 mesh opacity-70"></div>
-            <div class="bg-glow absolute -top-32 right-[-8rem] h-96 w-96 rounded-full bg-amber-200/40 blur-3xl"></div>
-            <div class="bg-glow absolute top-[32rem] left-[-8rem] h-96 w-96 rounded-full bg-amber-200/40 blur-3xl"></div>
-            <div class="bg-glow absolute bottom-[-8rem] right-1/4 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl"></div>
+            <div class="bg-glow absolute -top-32 right-[-8rem] h-96 w-96 rounded-full bg-[#fbb034]/25 blur-3xl"></div>
+            <div class="bg-glow absolute top-[32rem] left-[-8rem] h-96 w-96 rounded-full bg-[#ff6b35]/20 blur-3xl"></div>
+            <div class="bg-glow absolute bottom-[-8rem] right-1/4 h-80 w-80 rounded-full bg-[#7928ca]/20 blur-3xl"></div>
         </div>
 
         <div class="relative z-10">
@@ -242,11 +254,11 @@
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div class="flex h-20 items-center justify-between">
                         <a href="{{ url('/') }}" class="flex items-center gap-3">
-                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 shadow-lg shadow-slate-900/15">
-                                <img src="{{ asset('landing/sq.png') }}" alt="Símbolo de SQ Smart Solutions" width="40" height="40" class="h-10 w-10 object-contain" loading="eager" decoding="async" />
+                            <div class="flex h-16 w-16 bg-black items-center justify-center rounded-2xl shadow-lg overflow-hidden">
+                                <img src="{{ asset('landing/LOGO_SAKEV.png') }}" alt="Símbolo de SAKEV" width="54" height="54" class="h-11 w-11 object-contain rounded-xl" loading="eager" decoding="async" />
                             </div>
                             <div>
-                                <p class="text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-500">SQ Smart Solutions</p>
+                                <p class="text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-500">Sakev Solutions</p>
                                 <p class="font-display text-lg font-semibold text-slate-900">Control que se entiende, resultados que se sienten</p>
                             </div>
                         </a>
@@ -328,8 +340,8 @@
 
                         <div class="relative lg:pl-8" aria-label="Áreas de trabajo conectadas por soluciones digitales">
                             <div class="glass-panel relative overflow-hidden rounded-[2rem] p-7 sm:p-10">
-                                <div class="absolute -right-14 -top-14 h-48 w-48 rounded-full bg-[#fbc64d]/25 blur-3xl"></div>
-                                <div class="absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-[#854593]/25 blur-3xl"></div>
+                                <div class="absolute -right-14 -top-14 h-48 w-48 rounded-full bg-[#fbb034]/25 blur-3xl"></div>
+                                <div class="absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-[#7928ca]/25 blur-3xl"></div>
                                 <p class="relative text-xs font-bold uppercase tracking-[0.25em] text-slate-500">Un ecosistema conectado</p>
                                 <div class="relative mt-8 grid grid-cols-2 gap-4">
                                     <div class="rounded-2xl border border-slate-900/10 bg-white/80 p-5">
@@ -353,9 +365,9 @@
                                         <p class="mt-1 text-sm text-slate-600">Visibilidad para cada equipo.</p>
                                     </div>
                                 </div>
-                                <div class="relative mt-5 rounded-2xl bg-[#28213b] px-6 py-5 text-white">
-                                    <span class="font-display text-xl font-semibold text-[#fbc64d]">SQ Smart Solutions</span>
-                                    <p class="mt-1 text-sm text-[#e3d3ed]">Tecnología conectada con necesidades reales.</p>
+                                <div class="relative mt-5 rounded-2xl bg-[#160f24] border border-[#2f1d47] px-6 py-5 text-white">
+                                    <img src="{{ asset('landing/LOGO_SAKEV_LETRA.png') }}" alt="SAKEV" class="h-8 w-auto object-contain rounded-lg mb-2" />
+                                    <p class="mt-1 text-sm text-[#cbbcd9]">Tecnología conectada con necesidades reales.</p>
                                 </div>
                             </div>
                         </div>
@@ -364,14 +376,14 @@
 
                 <section id="propuesta" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
                     <div class="reveal mb-12 max-w-3xl">
-                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#854593]">Propuesta de valor</p>
+                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#7928ca] dark:text-[#fbb034]">Propuesta de valor</p>
                         <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Soluciones digitales construidas alrededor de cada reto.</h2>
                         <p class="mt-4 text-lg leading-8 text-slate-600">Desde una aplicación interna hasta un tablero de indicadores: diseñamos herramientas que reúnen información, simplifican tareas y facilitan el seguimiento.</p>
                     </div>
 
                     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                         <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#160f24] text-white">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7" /></svg>
                             </div>
                             <h3 class="mt-5 text-xl font-semibold text-slate-950">Datos accesibles</h3>
@@ -379,7 +391,7 @@
                         </article>
 
                         <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#854593] text-white">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7928ca] text-white">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v8m4-4H8" /></svg>
                             </div>
                             <h3 class="mt-5 text-xl font-semibold text-slate-950">Automatizacion util</h3>
@@ -387,7 +399,7 @@
                         </article>
 
                         <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ee7760] text-white">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ff6b35] text-white">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2.21 0-4 1.34-4 3s1.79 3 4 3 4 1.34 4 3-1.79 3-4 3m0-14v14" /></svg>
                             </div>
                             <h3 class="mt-5 text-xl font-semibold text-slate-950">Integración de datos</h3>
@@ -395,7 +407,7 @@
                         </article>
 
                         <article class="reveal card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/80 p-6">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ac4479] text-white">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#d926a9] text-white">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" /></svg>
                             </div>
                             <h3 class="mt-5 text-xl font-semibold text-slate-950">Escala ordenada</h3>
@@ -441,7 +453,7 @@
 
                 <section id="metodo" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
                     <div class="reveal mb-12 max-w-3xl">
-                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#854593]">Metodo</p>
+                        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#7928ca] dark:text-[#fbb034]">Metodo</p>
                         <h2 class="font-display mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Un proceso sencillo, consultivo y orientado a adopcion real.</h2>
                     </div>
 
@@ -487,22 +499,22 @@
 
                         <div class="reveal grid gap-5 sm:grid-cols-2">
                             <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
-                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-[#854593]">Prioridad</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-[#7928ca] dark:text-[#fbb034]">Prioridad</p>
                                 <h3 class="mt-4 text-xl font-semibold text-slate-950">Reducir caos operativo</h3>
                                 <p class="mt-3 text-sm leading-7 text-slate-600">Eliminar retrabajo, duplicidad y seguimiento manual.</p>
                             </div>
                             <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
-                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-amber-700">Prioridad</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-[#ff6b35]">Prioridad</p>
                                 <h3 class="mt-4 text-xl font-semibold text-slate-950">Ver antes de reaccionar</h3>
                                 <p class="mt-3 text-sm leading-7 text-slate-600">Anticipar desvio, atrasos y oportunidades.</p>
                             </div>
                             <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
-                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-700">Prioridad</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-[#d926a9]">Prioridad</p>
                                 <h3 class="mt-4 text-xl font-semibold text-slate-950">Unificar informacion</h3>
                                 <p class="mt-3 text-sm leading-7 text-slate-600">Una sola fuente para operacion, direccion y comercial.</p>
                             </div>
                             <div class="card-rise rounded-[1.75rem] border border-slate-900/10 bg-white/85 p-6">
-                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Prioridad</p>
+                                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-[#7928ca]">Prioridad</p>
                                 <h3 class="mt-4 text-xl font-semibold text-slate-950">Escalar sin desorden</h3>
                                 <p class="mt-3 text-sm leading-7 text-slate-600">Crecimiento con estructura, no con parches.</p>
                             </div>
@@ -523,9 +535,9 @@
                                 <div class="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
                                     <p class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-300">Canales de contacto</p>
                                     <div class="mt-5 grid gap-3">
-                                        <a href="mailto:contacto@sqsmartsolutions.com" class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">contacto@sqsmartsolutions.com</a>
+                                        <a href="mailto:contacto@sakev.com.mx" class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">contacto@sakev.com.mx</a>
                                         <a href="https://wa.me/5215536799199" target="_blank" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10">WhatsApp comercial</a>
-                                        <a href="{{ url('/contacto') }}" class="rounded-2xl bg-indigo-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-400">Abrir formulario</a>
+                                        <a href="{{ url('/contacto') }}" class="rounded-2xl bg-[#ff6b35] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#ff6b35]/25 transition hover:bg-[#e85a26] hover:-translate-y-0.5">abrir formulario de contacto</a>
                                     </div>
                                 </div>
                             </div>
@@ -536,8 +548,11 @@
 
             <footer class="border-t border-slate-900/5 bg-white/60">
                 <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-                    <p>© 2026 SQ Smart Solutions. Todos los derechos reservados.</p>
-                    <p>Control, automatizacion y decision para empresas que necesitan orden y visibilidad.</p>
+                    <div class="flex items-center gap-3">
+                        <img src="{{ asset('landing/LOGO_SAKEV_LETRA.png') }}" alt="SAKEV" class="h-6 w-auto object-contain rounded" />
+                        <p>© 2026 Sakev Solutions. Todos los derechos reservados.</p>
+                    </div>
+                    <p>Control, automatización y decisión para empresas que necesitan orden y visibilidad.</p>
                 </div>
             </footer>
         </div>
@@ -553,7 +568,7 @@
 
             const applyTheme = (theme) => {
                 const isDark = theme === 'dark';
-                
+
                 // Actualizar el atributo de tema
                 document.documentElement.dataset.theme = theme;
 
@@ -577,7 +592,7 @@
 
                 // Guardar preferencia
                 localStorage.setItem('sq-theme', theme);
-                
+
                 // Disparar evento personalizado
                 window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
             };

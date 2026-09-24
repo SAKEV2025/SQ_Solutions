@@ -22,54 +22,62 @@
         <style>
             /* ─── Design Token System (shared with welcome) ─── */
             :root {
-                --page-bg: #f4efe7;
-                --page-fg: #0f172a;
+                --page-bg: #fbf9fd;
+                --page-fg: #160f24;
                 --surface: rgba(255, 255, 255, 0.92);
                 --surface-strong: #ffffff;
                 --surface-muted: rgba(255, 255, 255, 0.7);
-                --border-soft: rgba(15, 23, 42, 0.08);
-                --border-medium: rgba(15, 23, 42, 0.14);
-                --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.08);
-                --text-primary: #0f172a;
-                --text-secondary: #475569;
-                --text-muted: #94a3b8;
-                --text-label: #374151;
+                --border-soft: #ede4f5;
+                --border-medium: #dfd0ec;
+                --shadow-soft: 0 24px 80px rgba(121, 40, 202, 0.07);
+                --text-primary: #160f24;
+                --text-secondary: #5b4e72;
+                --text-muted: #8c7fa3;
+                --text-label: #3b2c52;
                 --input-bg: #ffffff;
-                --input-border: #d1d5db;
-                --input-text: #0f172a;
-                --input-placeholder: #9ca3af;
-                --input-focus-border: #854593;
-                --input-focus-shadow: 0 0 0 3px #f2e9f5;
-                --accent-primary: #854593;
-                --accent-secondary: #ee7760;
-                --btn-primary-bg: #0f172a;
-                --btn-primary-hover: #1e293b;
+                --input-border: #dfd0ec;
+                --input-text: #160f24;
+                --input-placeholder: #8c7fa3;
+                --input-focus-border: #7928ca;
+                --input-focus-shadow: 0 0 0 3px rgba(121, 40, 202, 0.15);
+                --accent-primary: #7928ca;
+                --accent-secondary: #ff6b35;
+                --brand-gold: #fbb034;
+                --brand-orange: #ff6b35;
+                --brand-magenta: #d926a9;
+                --brand-violet: #7928ca;
+                --btn-primary-bg: #160f24;
+                --btn-primary-hover: #291b43;
                 color-scheme: light;
             }
 
             html[data-theme="dark"] {
-                --page-bg: #19142a;
-                --page-fg: #f9f3ff;
-                --surface: #28213b;
-                --surface-strong: #35294b;
-                --surface-muted: #211b32;
-                --border-soft: #49345d;
-                --border-medium: #654572;
-                --shadow-soft: 0 24px 80px #120c20;
-                --text-primary: #f9f3ff;
-                --text-secondary: #e3d3ed;
-                --text-muted: #c4a9d0;
+                --page-bg: #0e0918;
+                --page-fg: #f5f0fa;
+                --surface: #181126;
+                --surface-strong: #201633;
+                --surface-muted: #130c21;
+                --border-soft: #2f1d47;
+                --border-medium: #492b6e;
+                --shadow-soft: 0 24px 80px #06030c;
+                --text-primary: #ffffff;
+                --text-secondary: #cbbcd9;
+                --text-muted: #8b79a0;
                 --text-label: #e3d3ed;
-                --input-bg: #211b32;
-                --input-border: #49345d;
-                --input-text: #f9f3ff;
-                --input-placeholder: #c4a9d0;
-                --input-focus-border: #fbc64d;
-                --input-focus-shadow: 0 0 0 3px #49345d;
-                --accent-primary: #854593;
-                --accent-secondary: #ee7760;
-                --btn-primary-bg: #854593;
-                --btn-primary-hover: #a35aaf;
+                --input-bg: #130c21;
+                --input-border: #2f1d47;
+                --input-text: #f5f0fa;
+                --input-placeholder: #8b79a0;
+                --input-focus-border: #fbb034;
+                --input-focus-shadow: 0 0 0 3px rgba(251, 176, 52, 0.2);
+                --accent-primary: #fbb034;
+                --accent-secondary: #ff6b35;
+                --brand-gold: #fbb034;
+                --brand-orange: #ff6b35;
+                --brand-magenta: #d926a9;
+                --brand-violet: #7928ca;
+                --btn-primary-bg: #7928ca;
+                --btn-primary-hover: #903fe6;
                 color-scheme: dark;
             }
 
@@ -222,7 +230,11 @@
 
             .info-card:hover {
                 transform: translateY(-4px);
-                box-shadow: 0 16px 40px #120c20;
+                box-shadow: 0 16px 40px rgba(121, 40, 202, 0.12);
+            }
+
+            html[data-theme="dark"] .info-card:hover {
+                box-shadow: 0 16px 40px #06030c;
             }
 
             /* ─── Labels / helper text ─── */
@@ -300,13 +312,13 @@
             /* ─── Theme toggle & mobile menu ─── */
             html[data-theme="dark"] #theme-toggle,
             html[data-theme="dark"] #mobile-menu-button {
-                background-color: #35294b !important;
-                border-color: #654572 !important;
-                color: #f9f3ff !important;
+                background-color: #201633 !important;
+                border-color: #492b6e !important;
+                color: #f5f0fa !important;
             }
 
             html[data-theme="dark"] #theme-toggle:hover {
-                background-color: #49345d !important;
+                background-color: #2f1d47 !important;
             }
 
             /* Animación suave para botones y enlaces */
@@ -331,8 +343,8 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-20 items-center justify-between">
                     <a href="{{ url('/') }}" class="flex items-center gap-3">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 shadow-lg shadow-slate-900/15">
-                            <img src="{{ asset('landing/sq.png') }}" alt="SQ Smart Solutions Logo" width="40" height="40" class="h-10 w-10 object-contain" loading="eager" decoding="async" />
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 shadow-lg shadow-slate-900/15 overflow-hidden">
+                            <img src="{{ asset('landing/LOGO_SAKEV.png') }}" alt="SAKEV Logo" width="44" height="44" class="h-11 w-11 object-contain rounded-xl" loading="eager" decoding="async" />
                         </div>
                         <div>
                             <p class="text-[11px] font-semibold uppercase tracking-[0.35em] text-slate-500">SQ Smart Solutions</p>
@@ -538,7 +550,7 @@
                     <!-- Section 2: Project Details -->
                     <div class="space-y-6">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #4f46e5">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #ff6b35">
                                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                 </svg>
@@ -594,31 +606,6 @@
                                     <p class="field-error">{{ $message }}</p>
                                 @enderror
                             </div>
-
-                            <!-- Budget -->
-                            <div class="sm:col-span-2">
-                                <label class="field-label">Rango de Presupuesto (MXN)</label>
-                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                                    @foreach([
-                                        ['value' => 'menos_5k',   'label' => 'Menos de $5,000'],
-                                        ['value' => '5k_15k',     'label' => '$5,000 – $15,000'],
-                                        ['value' => '15k_30k',    'label' => '$15,000 – $30,000'],
-                                        ['value' => 'mas_30k',    'label' => 'Más de $30,000'],
-                                    ] as $opcion)
-                                        <label class="cursor-pointer block">
-                                            <input
-                                                type="radio"
-                                                name="presupuesto"
-                                                value="{{ $opcion['value'] }}"
-                                                {{ old('presupuesto') == $opcion['value'] ? 'checked' : '' }}
-                                                class="sr-only"
-                                                id="presupuesto_{{ $opcion['value'] }}"
-                                            >
-                                            <span class="toggle-label">{{ $opcion['label'] }}</span>
-                                        </label>
-                                    @endforeach
-                                </div>
-                            </div>
                         </div>
 
                         <!-- Project Description -->
@@ -672,7 +659,7 @@
                     <!-- Section 3: Additional Info -->
                     <div class="space-y-6">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #059669">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #d926a9">
                                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
@@ -767,7 +754,7 @@
                         <button
                             type="submit"
                             class="inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold text-white shadow-xl transition hover:-translate-y-0.5"
-                            style="background-color: var(--btn-primary-bg); box-shadow: 0 8px 24px #120c2080;"
+                            style="background-color: var(--btn-primary-bg); box-shadow: 0 8px 24px rgba(121, 40, 202, 0.25);"
                             onmouseover="this.style.backgroundColor='var(--btn-primary-hover)'"
                             onmouseout="this.style.backgroundColor='var(--btn-primary-bg)'"
                         >
@@ -786,7 +773,7 @@
             <!-- Info Cards -->
             <div class="grid sm:grid-cols-3 gap-6 mt-12">
                 <div class="info-card p-6 text-center reveal">
-                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background-color: var(--accent-primary)">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background-color: #7928ca">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
@@ -796,7 +783,7 @@
                 </div>
 
                 <div class="info-card p-6 text-center reveal">
-                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background-color: #059669">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background-color: #ff6b35">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
@@ -806,7 +793,7 @@
                 </div>
 
                 <div class="info-card p-6 text-center reveal">
-                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background-color: #7c3aed">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style="background-color: #d926a9">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
@@ -820,7 +807,10 @@
         <!-- Footer -->
         <footer class="site-footer">
             <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8" style="color: var(--text-muted)">
-                <p>© {{ date('Y') }} SQ Smart Solutions. Todos los derechos reservados.</p>
+                <div class="flex items-center gap-3">
+                    <img src="{{ asset('landing/LOGO_SAKEV_LETRA.png') }}" alt="SAKEV" class="h-6 w-auto object-contain rounded" />
+                    <p>© {{ date('Y') }} SQ Smart Solutions. Todos los derechos reservados.</p>
+                </div>
                 <p>Control, automatización y decisión para empresas que necesitan orden y visibilidad.</p>
             </div>
         </footer>

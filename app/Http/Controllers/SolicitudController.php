@@ -26,7 +26,6 @@ class SolicitudController extends Controller
             'telefono'         => ['required', 'string', 'max:30'],
             'tipo_proyecto'    => ['required', 'string', 'in:dashboard,web,base_datos,appsheet,business_intelligence,consultoria,otro'],
             'tiempo_estimado'  => ['required', 'string', 'in:urgente,1_mes,1_3_meses,3_6_meses,flexible'],
-            'presupuesto'      => ['nullable', 'string', 'in:menos_5k,5k_15k,15k_30k,mas_30k'],
             'descripcion'      => ['required', 'string', 'min:30', 'max:3000'],
             'tecnologias'      => ['nullable', 'array'],
             'tecnologias.*'    => ['string', 'max:100'],
