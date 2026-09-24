@@ -13,7 +13,12 @@ Route::get('/vista', function () {
 })->name('vista');
 
 Route::get('/contacto', [SolicitudController::class, 'create'])->name('solicitud.create');
-Route::post('/solicitud', [SolicitudController::class, 'store'])->name('solicitud.store');
+Route::post('/solicitud', [SolicitudController::class, 'store'])->middleware('throttle:5,1')->name('solicitud.store');
+
+Route::view('/privacidad', 'privacidad')->name('privacidad');
+Route::get('/sitemap.xml', function () {
+    return response()->view('marketing.sitemap')->header('Content-Type', 'application/xml; charset=UTF-8');
+})->name('sitemap');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
