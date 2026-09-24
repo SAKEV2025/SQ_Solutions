@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="@yield('description', 'SAKEV Solutions: aplicaciones web, automatización y datos para organizar el trabajo de tu empresa.')">
-        
+
         <link rel="canonical" href="{{ url()->current() }}" />
 
         <title>@yield('title', 'SAKEV Solutions | Software, automatización y datos')</title>
@@ -104,20 +104,61 @@
             }
 
             .card-rise {
-                transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background-color 300ms ease;
+                transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 260ms cubic-bezier(0.16, 1, 0.3, 1), border-color 260ms ease, background-color 300ms ease;
             }
 
             .card-rise:hover {
                 transform: translateY(-6px);
-                box-shadow: 0 24px 50px rgba(121, 40, 202, 0.12);
+                box-shadow: 0 24px 50px rgba(121, 40, 202, 0.14);
+                border-color: rgba(121, 40, 202, 0.3) !important;
             }
 
             html[data-theme="dark"] .card-rise:hover {
                 box-shadow: 0 24px 50px #06030c;
-                border-color: #492b6e;
+                border-color: #7928ca !important;
             }
 
-            .reveal { opacity: 1; }
+            /* Scroll Reveal animations */
+            .reveal {
+                opacity: 0;
+                transform: translateY(28px);
+                transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+                will-change: opacity, transform;
+            }
+
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Shimmer effect for primary CTAs */
+            .btn-shimmer {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .btn-shimmer::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -60%;
+                width: 40%;
+                height: 200%;
+                background: linear-gradient(
+                    60deg,
+                    rgba(255, 255, 255, 0) 20%,
+                    rgba(255, 255, 255, 0.25) 50%,
+                    rgba(255, 255, 255, 0) 80%
+                );
+                transform: rotate(25deg);
+                animation: shimmer 5s infinite;
+            }
+
+            @keyframes shimmer {
+                0% { left: -70%; }
+                20% { left: 140%; }
+                100% { left: 140%; }
+            }
 
             .mesh {
                 background-image: radial-gradient(circle at 1px 1px, rgba(121, 40, 202, 0.08) 1px, transparent 0);

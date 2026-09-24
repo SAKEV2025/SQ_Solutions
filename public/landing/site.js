@@ -61,4 +61,24 @@
         contact.addEventListener('change', updatePhone);
         updatePhone();
     }
+
+    // Scroll Reveal observer
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && reveals.length > 0) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        reveals.forEach(el => revealObserver.observe(el));
+    } else {
+        reveals.forEach(el => el.classList.add('active'));
+    }
 })();
